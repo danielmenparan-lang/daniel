@@ -1,141 +1,107 @@
 (() => {
-  const CAPACITY = 99;
-  const STORAGE_KEY = "trailhead-beta-v1";
-  const BASE_JOINED = 71;
-
-  const joinedCountEl = document.getElementById("joined-count");
-  const eyebrowEl = document.getElementById("spots-eyebrow");
-  const form = document.getElementById("beta-form");
-  const emailInput = document.getElementById("email");
-  const joinBtn = document.getElementById("join-btn");
-  const formHint = document.getElementById("form-hint");
-  const formStatus = document.getElementById("form-status");
+  const form = document.querySelector("#join-form");
+  const error = document.querySelector("#error");
+  const submit = document.querySelector("#submit");
+  const done = document.querySelector("#done");
+  const doneEmail = document.querySelector("#done-email");
   const header = document.querySelector(".site-header");
 
-  function readState() {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (!raw) {
-        return { joined: BASE_JOINED, emails: [] };
-      }
-      const parsed = JSON.parse(raw);
-      const emails = Array.isArray(parsed.emails) ? parsed.emails : [];
-      const joined = Math.min(
-        CAPACITY,
-        Math.max(BASE_JOINED, Number(parsed.joined) || BASE_JOINED)
-      );
-      return { joined, emails };
-    } catch {
-      return { joined: BASE_JOINED, emails: [] };
-    }
+  // Non-JS / HTML POST fallback lands here after Netlify accepts the form.
+  if (new URLSearchParams(window.location.search).has("joined")) {
+    form.hidden = true;
+    done.hidden = false;
   }
 
-  function writeState(state) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  function showError(message) {
+    error.hidden = false;
+    error.textContent = message;
   }
 
-  function spotsLeft(joined) {
-    return Math.max(0, CAPACITY - joined);
+  function clearError() {
+    error.hidden = true;
+    error.textContent = "";
   }
 
-  function render(state) {
-    const left = spotsLeft(state.joined);
-    joinedCountEl.textContent = String(state.joined);
-
-    if (left === 0) {
-      eyebrowEl.textContent = "Beta is full — waitlist closed";
-      emailInput.disabled = true;
-      joinBtn.disabled = true;
-      joinBtn.textContent = "Spots filled";
-      formHint.textContent = "All 99 seats are taken. Thanks for the interest.";
-      return;
-    }
-
-    const spotWord = left === 1 ? "spot" : "spots";
-    const countSpan = document.createElement("span");
-    countSpan.id = "spots-left";
-    countSpan.textContent = String(left);
-    eyebrowEl.replaceChildren(
-      document.createTextNode("Hurry — only "),
-      countSpan,
-      document.createTextNode(` ${spotWord} left`)
-    );
+  function encode(data) {
+    return new URLSearchParams(data).toString();
   }
 
-  function flashEyebrow() {
-    eyebrowEl.classList.remove("is-pulse");
-    // force reflow so animation can replay
-    void eyebrowEl.offsetWidth;
-    eyebrowEl.classList.add("is-pulse");
-  }
-
-  function isValidEmail(value) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-  }
-
-  let state = readState();
-  render(state);
-
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
-    formStatus.textContent = "";
-    formStatus.classList.remove("is-error");
+    clearError();
 
-    const email = emailInput.value.trim().toLowerCase();
+    const name = document.querySelector("#name").value.trim();
+    const email = document.querySelector("#email").value.trim();
+    const built = document.querySelector("#built").value.trim();
+    const botcheck = form.querySelector("[name=botcheck]").checked;
 
-    if (!isValidEmail(email)) {
-      formStatus.textContent = "Enter a valid email to join.";
-      formStatus.classList.add("is-error");
-      emailInput.focus();
+    if (botcheck) {
+      form.hidden = true;
+      done.hidden = false;
       return;
     }
 
-    state = readState();
-
-    if (state.emails.includes(email)) {
-      formStatus.textContent = "You’re already on the beta list with this email.";
-      render(state);
+    if (name.length < 2 || name.length > 80) {
+      showError("Enter your name.");
+      document.querySelector("#name").focus();
       return;
     }
 
-    if (spotsLeft(state.joined) <= 0) {
-      formStatus.textContent = "Sorry — the beta just filled up.";
-      formStatus.classList.add("is-error");
-      render(state);
+    if (email.length > 120 || !/^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]+$/.test(email)) {
+      showError("That email doesn’t look right.");
+      document.querySelector("#email").focus();
       return;
     }
 
-    state.joined = Math.min(CAPACITY, state.joined + 1);
-    state.emails.push(email);
-    writeState(state);
-    render(state);
-    flashEyebrow();
+    if (built.length < 2 || built.length > 280) {
+      showError("Tell us briefly what you built.");
+      document.querySelector("#built").focus();
+      return;
+    }
 
-    const left = spotsLeft(state.joined);
-    emailInput.value = "";
-    emailInput.disabled = true;
-    joinBtn.disabled = true;
-    joinBtn.textContent = "You’re in";
+    submit.disabled = true;
+    submit.textContent = "Sending…";
 
-    if (left === 0) {
-      formStatus.textContent = "You’re in — that was the last seat.";
-    } else if (left === 1) {
-      formStatus.textContent =
-        "You’re in. Hurry to join — only 1 spot left for everyone else.";
-    } else {
-      formStatus.textContent = `You’re in. Hurry to join — only ${left} spots left.`;
+    const payload = {
+      "form-name": form.getAttribute("name") || "pilot-signup",
+      name,
+      email,
+      built,
+      "bot-field": "",
+    };
+
+    try {
+      // Same-origin Netlify Forms POST — avoids third-party CORS failures.
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode(payload),
+      });
+
+      if (!response.ok) {
+        showError("That didn’t send. Try again in a moment.");
+        submit.disabled = false;
+        submit.textContent = "Request early access";
+        return;
+      }
+
+      form.hidden = true;
+      done.hidden = false;
+      doneEmail.textContent = `We’ll reach you at ${email}.`;
+    } catch {
+      showError("That didn’t send. Try again in a moment.");
+      submit.disabled = false;
+      submit.textContent = "Request early access";
     }
   });
 
-  // Sticky header border
   const onScroll = () => {
     header.classList.toggle("is-scrolled", window.scrollY > 12);
   };
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
-  // Reveal on scroll
-  const revealEls = document.querySelectorAll(".steps li, .preview");
+  const revealEls = document.querySelectorAll(".catch-list li, .steps li");
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(
       (entries) => {
@@ -146,7 +112,7 @@
           }
         });
       },
-      { threshold: 0.2, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0.18, rootMargin: "0px 0px -6% 0px" }
     );
     revealEls.forEach((el) => io.observe(el));
   } else {

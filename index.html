@@ -1,203 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <title>Trailhead — First customers, without the fear</title>
+    <title>silwolk — Morning checks for AI-shipped apps that left something open</title>
     <meta
       name="description"
-      content="Answer five questions. Get communities that fit, messages in your voice, and a 14-day plan to land your first customers — without getting banned."
+      content="Every morning, silwolk scans your AI-built app and emails what’s exposed—and how to close it. Read-only. Free early access."
     />
+    <meta property="og:title" content="silwolk — Wake up to what’s still open" />
+    <meta
+      property="og:description"
+      content="Every morning, silwolk scans your AI-built app and emails what’s exposed—and how to close it. Read-only."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,800&family=Source+Serif+4:opsz,ital,wght@8..60,0,400;8..60,0,500;8..60,1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <a class="skip" href="#main">Skip to content</a>
+    <a class="skip" href="#join">Skip to early access</a>
 
     <header class="site-header">
       <div class="wrap header-inner">
-        <a class="logo" href="#top" aria-label="Trailhead home">Trailhead</a>
-        <nav class="nav" aria-label="Primary">
-          <a href="#how">How it works</a>
-          <a href="#you-get">What you get</a>
-          <a class="nav-cta" href="#beta">Join the beta</a>
-        </nav>
+        <a class="logo" href="#top">silwolk</a>
+        <a class="header-cta" href="#join">Get early access</a>
       </div>
     </header>
 
-    <main id="main">
-      <section class="hero" id="top">
-        <div class="hero-media" aria-hidden="true">
-          <img
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2000&q=80"
-            alt=""
-            width="2000"
-            height="1333"
-          />
-          <div class="hero-shade"></div>
+    <main id="top">
+      <section class="hero" aria-label="Introduction">
+        <div class="hero-plane" aria-hidden="true">
+          <div class="hero-dawn"></div>
+          <div class="hero-grid"></div>
         </div>
-        <div class="wrap hero-copy">
-          <p class="brand-mark">Trailhead</p>
-          <h1>You built the product.<br />Now find the first people.</h1>
-          <p class="lede">
-            Five questions. Matching communities with their rules. A short post
-            in your voice. Copy, open, send.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#beta">Join the beta</a>
-            <a class="btn btn-ghost" href="#how">See how it works</a>
+
+        <div class="wrap hero-layout">
+          <div class="hero-copy">
+            <p class="brand">silwolk</p>
+            <h1>Wake up to what’s still open in the app you shipped with AI.</h1>
+            <p class="lede">
+              Every morning we check for exposed secrets, open databases, and
+              unprotected customer data—then email you a plain-English note with
+              what to fix.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#join">Get early access</a>
+              <a class="btn btn-ghost" href="#note">See a morning note</a>
+            </div>
+            <p class="trust">Read-only agent. We can’t change or delete anything in your app.</p>
+          </div>
+
+          <figure class="morning-note" id="note">
+            <figcaption>
+              <span class="note-label">Morning note</span>
+              <span class="note-time">07:12</span>
+            </figcaption>
+            <div class="note-body">
+              <p><strong>Found</strong></p>
+              <p>
+                Exposed key in <code>checkout.ts</code>. Postgres string in a
+                public env file. Redis reachable with no password.
+              </p>
+              <p><strong>What to do</strong></p>
+              <ol>
+                <li>Remove the key from the file and rotate it.</li>
+                <li>Move DB credentials to a private secrets store.</li>
+                <li>Bind Redis privately and require a password.</li>
+              </ol>
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <section class="join-section" id="join">
+        <div class="wrap join-grid">
+          <div class="join-copy">
+            <p class="eyebrow">Free while we’re building</p>
+            <h2>Join early access</h2>
+            <p>
+              Tell us what you built. We’ll email you within
+              <strong>48 hours</strong> with next steps—and a morning note on
+              your app once you’re in.
+            </p>
+          </div>
+
+          <form
+            class="join-form"
+            id="join-form"
+            name="pilot-signup"
+            method="POST"
+            action="/thanks.html"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            novalidate
+          >
+            <input type="hidden" name="form-name" value="pilot-signup" />
+            <p class="hp" aria-hidden="true">
+              <label>
+                Don’t fill this out if you’re human:
+                <input name="bot-field" tabindex="-1" autocomplete="off" />
+                <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" />
+              </label>
+            </p>
+
+            <label>
+              <span>Name</span>
+              <input id="name" name="name" autocomplete="name" maxlength="80" required />
+            </label>
+            <label>
+              <span>Email</span>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                inputmode="email"
+                maxlength="120"
+                required
+              />
+            </label>
+            <label>
+              <span>What did you build?</span>
+              <input
+                id="built"
+                name="built"
+                maxlength="280"
+                placeholder="e.g. a checkout app I shipped with Cursor"
+                required
+              />
+            </label>
+
+            <p id="error" class="error" role="alert" hidden></p>
+
+            <button id="submit" type="submit" class="btn btn-primary">
+              Request early access
+            </button>
+
+            <p class="micro">
+              We only use your email for early access. No spam. Read-only checks only.
+              Prefer email?
+              <a href="mailto:silwolk.com@gmail.com?subject=silwolk%20early%20access&body=Name%3A%0AWhat%20I%20built%3A%0A">Write us directly</a>.
+            </p>
+          </form>
+
+          <div id="done" class="done" hidden>
+            <p class="success">You’re on the list.</p>
+            <p id="done-email" class="done-detail"></p>
+            <p class="done-detail">
+              We’ll reply within 48 hours with whether you’re in and what we need
+              for your first morning check.
+            </p>
           </div>
         </div>
       </section>
 
-      <section class="section problem" id="problem">
-        <div class="wrap narrow">
-          <h2>Most builders freeze at the first post.</h2>
-          <p>
-            You don’t know which communities actually fit. You’re afraid of
-            sounding salesy. You post once, get ignored or banned, and quit.
-            Trailhead turns that into a clear path: right rooms, right words,
-            right follow-up.
-          </p>
+      <section class="section catches" id="catch">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>What we look for</h2>
+            <p>The openings AI scaffolding leaves behind—before someone else finds them.</p>
+          </div>
+          <ul class="catch-list">
+            <li>
+              <h3>Exposed keys</h3>
+              <p>API keys, tokens, and connection strings sitting in files anyone can read.</p>
+            </li>
+            <li>
+              <h3>Open databases</h3>
+              <p>Databases or caches reachable without permission, so the data walks out.</p>
+            </li>
+            <li>
+              <h3>Exposed customer data</h3>
+              <p>Names, emails, or phone numbers left without protection on an endpoint or config.</p>
+            </li>
+          </ul>
         </div>
       </section>
 
       <section class="section how" id="how">
         <div class="wrap">
           <div class="section-head">
-            <h2>Five answers. A ready path.</h2>
-            <p>
-              Tell us what you built. We map it to places people already talk —
-              and draft what to say.
-            </p>
+            <h2>How it works</h2>
+            <p>Three steps. No agent with write access. No surprise deploys.</p>
           </div>
           <ol class="steps">
             <li>
               <span class="step-num">01</span>
               <div>
-                <h3>Answer five short questions</h3>
-                <p>Who it’s for, what it does, proof, tone, and where you hang out online.</p>
+                <h3>Tell us what you built</h3>
+                <p>Point us at the app you shipped with Cursor, Copilot, or similar.</p>
               </div>
             </li>
             <li>
               <span class="step-num">02</span>
               <div>
-                <h3>Get 2–3 verified communities</h3>
-                <p>From a curated pool — with posting rules pulled in, so you don’t guess.</p>
+                <h3>We check every morning</h3>
+                <p>Read-only. No changes, no deletes, no “helpful” edits to your code.</p>
               </div>
             </li>
             <li>
               <span class="step-num">03</span>
               <div>
-                <h3>Copy. Open. Send.</h3>
-                <p>One tap copies your message and opens the community. You just hit send.</p>
+                <h3>You get a plain note</h3>
+                <p>What’s open, and the exact steps to close it—before a stranger peeks.</p>
               </div>
             </li>
           </ol>
-        </div>
-      </section>
-
-      <section class="section you-get" id="you-get">
-        <div class="wrap">
-          <div class="section-head">
-            <h2>What lands in your hands</h2>
-            <p>Everything you need for the first two weeks — not another endless checklist.</p>
-          </div>
-
-          <div class="deliverables">
-            <article>
-              <h3>Communities that fit</h3>
-              <p>Two or three rooms matched to your product, with the rules you’d otherwise miss.</p>
-            </article>
-            <article>
-              <h3>Messages in your voice</h3>
-              <p>Short drafts tuned to each community — helpful, not pitchy.</p>
-            </article>
-            <article>
-              <h3>Reply & payment scripts</h3>
-              <p>What to say when someone bites, and how to ask for the sale without cringing.</p>
-            </article>
-            <article>
-              <h3>14-day plan + tracking</h3>
-              <p>A simple cadence and a place to log replies so momentum doesn’t die on day three.</p>
-            </article>
-          </div>
-
-          <aside class="preview" aria-label="Sample output preview">
-            <header class="preview-top">
-              <span>Sample match</span>
-              <span class="preview-tag">Demo</span>
-            </header>
-            <div class="preview-body">
-              <div class="preview-comm">
-                <strong>r/SaaS</strong>
-                <span>No direct links in first posts · Value-first</span>
-              </div>
-              <blockquote>
-                Built a tiny tool after getting stuck finding where to ask for
-                feedback. Happy to share the process if useful — curious how
-                others found their first ten users.
-              </blockquote>
-              <button type="button" class="btn btn-secondary" id="demo-copy" disabled>
-                Copy &amp; open community
-              </button>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section class="section beta" id="beta">
-        <div class="wrap beta-grid">
-          <div class="beta-copy">
-            <p class="eyebrow" id="spots-eyebrow">Hurry — only <span id="spots-left">28</span> spots left</p>
-            <h2>Join the 99-person beta</h2>
-            <p>
-              We’re opening a small run for builders who already have something
-              to ship. Leave your email — we’ll let you in as seats open.
-            </p>
-            <ul class="beta-notes">
-              <li>Early access while we shape the community bank</li>
-              <li>Direct line to the founders</li>
-              <li>Capped at 99 — then the waitlist closes</li>
-            </ul>
-          </div>
-
-          <form class="beta-form" id="beta-form" novalidate>
-            <label for="email">Work email</label>
-            <div class="field-row">
-              <input
-                id="email"
-                name="email"
-                type="email"
-                autocomplete="email"
-                placeholder="you@studio.com"
-                required
-              />
-              <button type="submit" class="btn btn-primary" id="join-btn">
-                Join the beta
-              </button>
-            </div>
-            <p class="form-hint" id="form-hint">
-              <span id="joined-count">71</span> of 99 builders already in.
-            </p>
-            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-          </form>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="wrap footer-inner">
-        <span class="logo">Trailhead</span>
-        <p>For builders who are done guessing where to post.</p>
+        <span class="logo">silwolk</span>
+        <p>
+          Questions?
+          <a href="mailto:silwolk.com@gmail.com">silwolk.com@gmail.com</a>
+        </p>
       </div>
     </footer>
+
+    <div class="mobile-bar" aria-hidden="false">
+      <a class="btn btn-primary" href="#join">Get early access</a>
+    </div>
 
     <script src="app.js"></script>
   </body>

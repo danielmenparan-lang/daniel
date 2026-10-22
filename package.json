@@ -1,8 +1,8 @@
 {
-  "name": "trailhead-landing",
-  "version": "0.1.0",
+  "name": "silwolk-landing",
+  "version": "0.2.0",
   "private": true,
-  "description": "Trailhead — MVP landing page for builders finding first customers",
+  "description": "silwolk — morning security notes for AI-shipped apps",
   "scripts": {
     "start": "npx --yes serve -l 4173",
     "dev": "npx --yes serve -l 4173"
