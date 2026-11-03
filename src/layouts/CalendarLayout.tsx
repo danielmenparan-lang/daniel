@@ -1,24 +1,30 @@
 import type { LayoutProps } from './types'
 import { DemoChrome } from './shared'
 
-const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-const events: Record<number, string> = {
-  2: 'Kickoff',
-  5: 'Design review',
-  9: 'Customer call',
-  12: 'Ship window',
-  16: 'Retro',
+type CalPayload = {
+  events?: Record<string, string>
+  timezone?: string
 }
 
-export function CalendarLayout({ demo }: LayoutProps) {
+const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+
+export function CalendarLayout({ demo, mock }: LayoutProps) {
+  const data = mock.api.payload as CalPayload
+  const events = data.events ?? {}
+
   return (
-    <DemoChrome demo={demo}>
+    <DemoChrome demo={demo} mock={mock}>
       <div className="lay-cal">
         <header>
-          <h1>{demo.name}</h1>
-          <p>
-            {demo.nameHe} · {demo.tagline}
-          </p>
+          <div>
+            <h1>{demo.name}</h1>
+            <p>
+              {demo.nameHe} · {demo.tagline} · {data.timezone ?? 'UTC'} · <code>GET /events</code>
+            </p>
+          </div>
+          <button type="button" className="btn-primary" onClick={mock.refresh}>
+            Reload
+          </button>
         </header>
         <div className="cal-grid">
           {days.map((d) => (
@@ -26,12 +32,15 @@ export function CalendarLayout({ demo }: LayoutProps) {
               {d}
             </div>
           ))}
-          {Array.from({ length: 28 }, (_, i) => (
-            <div key={i} className="cal-cell">
-              <span>{i + 1}</span>
-              {events[i] ? <em>{events[i]}</em> : null}
-            </div>
-          ))}
+          {Array.from({ length: 28 }, (_, i) => {
+            const day = String(i + 1)
+            return (
+              <div key={i} className="cal-cell">
+                <span>{i + 1}</span>
+                {events[day] ? <em>{events[day]}</em> : null}
+              </div>
+            )
+          })}
         </div>
       </div>
     </DemoChrome>

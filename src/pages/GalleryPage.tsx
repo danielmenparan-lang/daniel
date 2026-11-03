@@ -36,12 +36,13 @@ export function GalleryPage() {
           <h1>מאה דמואים</h1>
           <p className="gallery-lead">
             גלריה של 100 מערכות דמו שנבנו בסגנון כלי AI — Claude, Cursor, GPT ועוד.
-            כל דמו הוא ממשק מוכן לסיור, עם פריסה ופלטה ייחודיות.
+            לכל דמו יש נתוני דמה, חיבורי API מדומים, לוג בקשות ו־payload לדוגמה.
           </p>
           <div className="gallery-meta">
             <span>{demos.length} demos</span>
             <span>{categories.length} categories</span>
             <span>10 layout patterns</span>
+            <span>Mock APIs</span>
           </div>
         </div>
         <div className="gallery-hero-glow" aria-hidden />
@@ -108,6 +109,7 @@ export function GalleryPage() {
                 <span>#{demo.id}</span>
                 <span>{demo.layout}</span>
                 <span>{demo.categoryHe}</span>
+                <span>api.mock.{demo.slug}.demo</span>
               </div>
             </div>
           </Link>

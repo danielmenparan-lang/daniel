@@ -1,25 +1,26 @@
 import type { LayoutProps } from './types'
 import { DemoChrome } from './shared'
 
-const threads = ['Billing question', 'Onboarding help', 'API rate limits', 'Feature request']
-const messages = [
-  { role: 'user', text: 'Can you summarize last week’s support themes?' },
-  {
-    role: 'assistant',
-    text: 'Top themes: billing confusion (31%), onboarding drop-off (22%), API timeouts (18%). Want a draft reply pack?',
-  },
-  { role: 'user', text: 'Yes — keep the tone calm and concrete.' },
-]
+type ChatPayload = {
+  threads?: string[]
+  messages?: { role: string; text: string }[]
+  model?: string
+  tokens?: number
+}
 
-export function ChatLayout({ demo }: LayoutProps) {
+export function ChatLayout({ demo, mock }: LayoutProps) {
+  const data = mock.api.payload as ChatPayload
+
   return (
-    <DemoChrome demo={demo}>
+    <DemoChrome demo={demo} mock={mock}>
       <div className="lay-chat">
         <aside>
           <h2>{demo.name}</h2>
-          <p className="muted">{demo.nameHe}</p>
+          <p className="muted">
+            {demo.nameHe} · {data.tokens ?? 0} tokens mocked
+          </p>
           <ul>
-            {threads.map((t, i) => (
+            {(data.threads ?? []).map((t, i) => (
               <li key={t} className={i === 0 ? 'active' : ''}>
                 {t}
               </li>
@@ -29,10 +30,12 @@ export function ChatLayout({ demo }: LayoutProps) {
         <section className="chat-main">
           <header>
             <strong>AI assistant</strong>
-            <span>Grounded · {demo.builtWith}</span>
+            <span>
+              {data.model ?? demo.builtWith} · POST /ai/complete
+            </span>
           </header>
           <div className="chat-stream">
-            {messages.map((m, i) => (
+            {(data.messages ?? []).map((m, i) => (
               <div key={i} className={`bubble ${m.role}`}>
                 {m.text}
               </div>
@@ -40,7 +43,7 @@ export function ChatLayout({ demo }: LayoutProps) {
           </div>
           <div className="chat-compose">
             <input readOnly value="Ask about tickets, docs, or drafts…" />
-            <button type="button" className="btn-primary">
+            <button type="button" className="btn-primary" onClick={mock.refresh}>
               Send
             </button>
           </div>

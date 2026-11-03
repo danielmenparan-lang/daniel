@@ -1,9 +1,17 @@
 import type { LayoutProps } from './types'
 import { DemoChrome, FakeChart, StatCards } from './shared'
 
-export function DashboardLayout({ demo }: LayoutProps) {
+type DashPayload = {
+  kpis?: { label: string; value: string; delta?: string }[]
+  series?: number[]
+  activity?: string[]
+}
+
+export function DashboardLayout({ demo, mock }: LayoutProps) {
+  const data = mock.api.payload as DashPayload
+
   return (
-    <DemoChrome demo={demo}>
+    <DemoChrome demo={demo} mock={mock}>
       <div className="lay-dash">
         <aside className="dash-side">
           <strong>{demo.name}</strong>
@@ -17,33 +25,26 @@ export function DashboardLayout({ demo }: LayoutProps) {
           <header>
             <div>
               <h1>{demo.nameHe}</h1>
-              <p>{demo.tagline}</p>
+              <p>
+                {demo.tagline} · live mock from <code>{mock.api.baseUrl}</code>
+              </p>
             </div>
-            <button type="button" className="btn-primary">
-              Export
+            <button type="button" className="btn-primary" onClick={mock.refresh}>
+              Refresh data
             </button>
           </header>
-          <StatCards
-            items={[
-              { label: 'Active users', value: '12.4k', delta: '+8.2%' },
-              { label: 'Conversion', value: '4.7%', delta: '+0.4%' },
-              { label: 'MRR', value: '$48k', delta: '+12%' },
-              { label: 'NPS', value: '62', delta: '+3' },
-            ]}
-          />
+          <StatCards items={data.kpis ?? []} />
           <div className="dash-panels">
             <div className="panel">
-              <h3>Trend</h3>
-              <FakeChart />
+              <h3>Trend · /metrics/timeseries</h3>
+              <FakeChart values={data.series} />
             </div>
             <div className="panel">
-              <h3>Activity</h3>
+              <h3>Activity · /activity</h3>
               <ul className="activity">
-                {['New signup from Tel Aviv', 'Invoice paid · $1,240', 'Feature flag enabled', 'Weekly digest sent'].map(
-                  (row) => (
-                    <li key={row}>{row}</li>
-                  ),
-                )}
+                {(data.activity ?? []).map((row) => (
+                  <li key={row}>{row}</li>
+                ))}
               </ul>
             </div>
           </div>

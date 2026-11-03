@@ -8,6 +8,8 @@
 - 100 דמואים ייחודיים (שם, תיאור בעברית, פלטה, ופריסת ממשק)
 - 10 תבניות ממשק: landing, dashboard, chat, marketplace, kanban, calendar, analytics, feed, form, studio
 - תגית "Built with …" בכל דמו
+- **Mock API לכל דמו**: base URL, API key מדומה, WebSocket, endpoints, latency, לוג בקשות, ו־JSON payload
+- כפתור Refresh שמריץ `mockFetch` עם השהייה מדומה
 
 ## הרצה מקומית
 

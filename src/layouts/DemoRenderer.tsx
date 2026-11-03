@@ -1,4 +1,5 @@
 import type { Demo } from '../data/demos'
+import { useMockApi } from '../hooks/useMockApi'
 import { LandingLayout } from './LandingLayout'
 import { DashboardLayout } from './DashboardLayout'
 import { ChatLayout } from './ChatLayout'
@@ -24,6 +25,7 @@ const map = {
 } as const
 
 export function DemoRenderer({ demo }: { demo: Demo }) {
+  const mock = useMockApi(demo)
   const Layout = map[demo.layout]
-  return <Layout demo={demo} />
+  return <Layout demo={demo} mock={mock} />
 }

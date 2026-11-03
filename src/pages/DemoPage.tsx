@@ -30,7 +30,7 @@ export function DemoPage() {
             #{demo.id} {demo.name}
           </strong>
           <span>
-            {demo.nameHe} · נבנה בסגנון {demo.builtWith}
+            {demo.nameHe} · נבנה בסגנון {demo.builtWith} · mock API
           </span>
         </div>
         <div className="demo-rail-nav">
