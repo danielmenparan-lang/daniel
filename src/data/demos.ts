@@ -36,53 +36,43 @@ export type Demo = {
 export const categories = [
   {
     "id": "saas",
-    "he": "SaaS ודשבורדים",
-    "en": "SaaS & Dashboards"
+    "he": "SaaS ודשבורדים"
   },
   {
     "id": "ai",
-    "he": "כלי AI וצ׳אט",
-    "en": "AI & Chat"
+    "he": "כלי AI וצ׳אט"
   },
   {
     "id": "commerce",
-    "he": "מסחר וחנויות",
-    "en": "Commerce"
+    "he": "מסחר וחנויות"
   },
   {
     "id": "health",
-    "he": "בריאות וכושר",
-    "en": "Health & Fitness"
+    "he": "בריאות וכושר"
   },
   {
     "id": "finance",
-    "he": "פיננסים ובנקים",
-    "en": "Finance"
+    "he": "פיננסים ובנקים"
   },
   {
     "id": "education",
-    "he": "למידה וחינוך",
-    "en": "Education"
+    "he": "למידה וחינוך"
   },
   {
     "id": "productivity",
-    "he": "פרודוקטיביות",
-    "en": "Productivity"
+    "he": "פרודוקטיביות"
   },
   {
     "id": "social",
-    "he": "חברתי ותוכן",
-    "en": "Social & Content"
+    "he": "חברתי ותוכן"
   },
   {
     "id": "travel",
-    "he": "נסיעות ואירוח",
-    "en": "Travel & Hospitality"
+    "he": "נסיעות ואירוח"
   },
   {
     "id": "ops",
-    "he": "תפעול ולוגיסטיקה",
-    "en": "Ops & Logistics"
+    "he": "תפעול ולוגיסטיקה"
   }
 ] as const;
 
@@ -95,7 +85,7 @@ export const demos: Demo[] = [
     "tagline": "Track product KPIs in one calm workspace",
     "category": "saas",
     "categoryHe": "SaaS ודשבורדים",
-    "layout": "landing",
+    "layout": "dashboard",
     "builtWith": "Claude",
     "palette": {
       "bg": "#0B1220",
@@ -106,10 +96,10 @@ export const demos: Demo[] = [
       "accent2": "#FF6B4A"
     },
     "features": [
-      "Hero",
-      "Features",
-      "CTA",
-      "Social proof"
+      "KPI cards",
+      "Charts",
+      "Activity feed",
+      "Filters"
     ]
   },
   {
@@ -118,8 +108,8 @@ export const demos: Demo[] = [
     "name": "PulseCRM",
     "nameHe": "CRM קליל לסטארטאפים",
     "tagline": "Close deals without spreadsheet chaos",
-    "category": "ai",
-    "categoryHe": "כלי AI וצ׳אט",
+    "category": "saas",
+    "categoryHe": "SaaS ודשבורדים",
     "layout": "dashboard",
     "builtWith": "Cursor",
     "palette": {
@@ -143,8 +133,8 @@ export const demos: Demo[] = [
     "name": "LumenChat",
     "nameHe": "עוזר AI לתמיכת לקוחות",
     "tagline": "Resolve tickets with grounded AI replies",
-    "category": "commerce",
-    "categoryHe": "מסחר וחנויות",
+    "category": "ai",
+    "categoryHe": "כלי AI וצ׳אט",
     "layout": "chat",
     "builtWith": "GPT-4",
     "palette": {
@@ -168,9 +158,9 @@ export const demos: Demo[] = [
     "name": "AtlasOps",
     "nameHe": "ניהול תפעול יומיומי",
     "tagline": "Run daily ops with live status boards",
-    "category": "health",
-    "categoryHe": "בריאות וכושר",
-    "layout": "marketplace",
+    "category": "ops",
+    "categoryHe": "תפעול ולוגיסטיקה",
+    "layout": "kanban",
     "builtWith": "Gemini",
     "palette": {
       "bg": "#F0F4F8",
@@ -181,10 +171,10 @@ export const demos: Demo[] = [
       "accent2": "#059669"
     },
     "features": [
-      "Product grid",
-      "Filters",
-      "Cart",
-      "Ratings"
+      "Columns",
+      "Cards",
+      "Drag affordance",
+      "WIP limits"
     ]
   },
   {
@@ -195,7 +185,7 @@ export const demos: Demo[] = [
     "tagline": "Simple books that stay accurate",
     "category": "finance",
     "categoryHe": "פיננסים ובנקים",
-    "layout": "kanban",
+    "layout": "dashboard",
     "builtWith": "v0",
     "palette": {
       "bg": "#1A0F0A",
@@ -206,10 +196,10 @@ export const demos: Demo[] = [
       "accent2": "#C4A35A"
     },
     "features": [
-      "Columns",
-      "Cards",
-      "Drag affordance",
-      "WIP limits"
+      "KPI cards",
+      "Charts",
+      "Activity feed",
+      "Filters"
     ]
   },
   {
@@ -220,7 +210,7 @@ export const demos: Demo[] = [
     "tagline": "Learn by doing, not scrolling",
     "category": "education",
     "categoryHe": "למידה וחינוך",
-    "layout": "calendar",
+    "layout": "landing",
     "builtWith": "Bolt",
     "palette": {
       "bg": "#0A1628",
@@ -231,10 +221,10 @@ export const demos: Demo[] = [
       "accent2": "#22D3EE"
     },
     "features": [
-      "Week view",
-      "Events",
-      "Availability",
-      "Reminders"
+      "Hero",
+      "Features",
+      "CTA",
+      "Social proof"
     ]
   },
   {
@@ -243,9 +233,9 @@ export const demos: Demo[] = [
     "name": "HarborBook",
     "nameHe": "הזמנות למסעדות וברים",
     "tagline": "Fill tables with smarter reservations",
-    "category": "productivity",
-    "categoryHe": "פרודוקטיביות",
-    "layout": "analytics",
+    "category": "travel",
+    "categoryHe": "נסיעות ואירוח",
+    "layout": "calendar",
     "builtWith": "Lovable",
     "palette": {
       "bg": "#FFF8F0",
@@ -256,10 +246,10 @@ export const demos: Demo[] = [
       "accent2": "#2F5D50"
     },
     "features": [
-      "Funnel",
-      "Cohorts",
-      "Export",
-      "Alerts"
+      "Week view",
+      "Events",
+      "Availability",
+      "Reminders"
     ]
   },
   {
@@ -268,9 +258,9 @@ export const demos: Demo[] = [
     "name": "SwiftCart",
     "nameHe": "חנות אונליין מהירה",
     "tagline": "Launch a storefront in an afternoon",
-    "category": "social",
-    "categoryHe": "חברתי ותוכן",
-    "layout": "feed",
+    "category": "commerce",
+    "categoryHe": "מסחר וחנויות",
+    "layout": "marketplace",
     "builtWith": "Copilot",
     "palette": {
       "bg": "#0D1117",
@@ -281,10 +271,10 @@ export const demos: Demo[] = [
       "accent2": "#58A6FF"
     },
     "features": [
-      "Posts",
-      "Comments",
-      "Reactions",
-      "Compose"
+      "Product grid",
+      "Filters",
+      "Cart",
+      "Ratings"
     ]
   },
   {
@@ -293,9 +283,9 @@ export const demos: Demo[] = [
     "name": "EchoNotes",
     "nameHe": "פתקים חכמים עם סיכומי AI",
     "tagline": "Capture thoughts, get instant summaries",
-    "category": "travel",
-    "categoryHe": "נסיעות ואירוח",
-    "layout": "form",
+    "category": "ai",
+    "categoryHe": "כלי AI וצ׳אט",
+    "layout": "studio",
     "builtWith": "Claude",
     "palette": {
       "bg": "#F5F0EB",
@@ -306,10 +296,10 @@ export const demos: Demo[] = [
       "accent2": "#B45309"
     },
     "features": [
-      "Multi-step",
-      "Validation",
-      "Progress",
-      "Review"
+      "Canvas",
+      "Layers",
+      "AI assist",
+      "Export"
     ]
   },
   {
@@ -318,8 +308,8 @@ export const demos: Demo[] = [
     "name": "ForgeStudio",
     "nameHe": "סטודיו לעיצוב מוצר",
     "tagline": "Sketch interfaces with AI co-pilot",
-    "category": "ops",
-    "categoryHe": "תפעול ולוגיסטיקה",
+    "category": "ai",
+    "categoryHe": "כלי AI וצ׳אט",
     "layout": "studio",
     "builtWith": "Cursor",
     "palette": {
@@ -343,9 +333,9 @@ export const demos: Demo[] = [
     "name": "BeaconHealth",
     "nameHe": "מעקב בריאות אישי",
     "tagline": "See trends across sleep, mood, and steps",
-    "category": "saas",
-    "categoryHe": "SaaS ודשבורדים",
-    "layout": "landing",
+    "category": "health",
+    "categoryHe": "בריאות וכושר",
+    "layout": "analytics",
     "builtWith": "GPT-4",
     "palette": {
       "bg": "#0B1220",
@@ -356,10 +346,10 @@ export const demos: Demo[] = [
       "accent2": "#FF6B4A"
     },
     "features": [
-      "Hero",
-      "Features",
-      "CTA",
-      "Social proof"
+      "Funnel",
+      "Cohorts",
+      "Export",
+      "Alerts"
     ]
   },
   {
@@ -368,8 +358,8 @@ export const demos: Demo[] = [
     "name": "CargoFlow",
     "nameHe": "מעקב משלוחים בזמן אמת",
     "tagline": "Know where every shipment sits",
-    "category": "ai",
-    "categoryHe": "כלי AI וצ׳אט",
+    "category": "ops",
+    "categoryHe": "תפעול ולוגיסטיקה",
     "layout": "dashboard",
     "builtWith": "Gemini",
     "palette": {
@@ -393,9 +383,9 @@ export const demos: Demo[] = [
     "name": "PixelNest",
     "nameHe": "גלריית פורטפוליו ליוצרים",
     "tagline": "Show work that feels intentional",
-    "category": "commerce",
-    "categoryHe": "מסחר וחנויות",
-    "layout": "chat",
+    "category": "social",
+    "categoryHe": "חברתי ותוכן",
+    "layout": "marketplace",
     "builtWith": "v0",
     "palette": {
       "bg": "#111111",
@@ -406,10 +396,10 @@ export const demos: Demo[] = [
       "accent2": "#E85D04"
     },
     "features": [
-      "Thread list",
-      "Composer",
-      "Suggestions",
-      "Sources"
+      "Product grid",
+      "Filters",
+      "Cart",
+      "Ratings"
     ]
   },
   {
@@ -418,9 +408,9 @@ export const demos: Demo[] = [
     "name": "SummitHR",
     "nameHe": "פורטל HR לעובדים",
     "tagline": "Leave requests, pay stubs, one place",
-    "category": "health",
-    "categoryHe": "בריאות וכושר",
-    "layout": "marketplace",
+    "category": "saas",
+    "categoryHe": "SaaS ודשבורדים",
+    "layout": "form",
     "builtWith": "Bolt",
     "palette": {
       "bg": "#F0F4F8",
@@ -431,10 +421,10 @@ export const demos: Demo[] = [
       "accent2": "#059669"
     },
     "features": [
-      "Product grid",
-      "Filters",
-      "Cart",
-      "Ratings"
+      "Multi-step",
+      "Validation",
+      "Progress",
+      "Review"
     ]
   },
   {
@@ -443,9 +433,9 @@ export const demos: Demo[] = [
     "name": "DriftMail",
     "nameHe": "כלי אימייל מרקטינג",
     "tagline": "Campaigns that read human",
-    "category": "finance",
-    "categoryHe": "פיננסים ובנקים",
-    "layout": "kanban",
+    "category": "saas",
+    "categoryHe": "SaaS ודשבורדים",
+    "layout": "analytics",
     "builtWith": "Lovable",
     "palette": {
       "bg": "#1A0F0A",
@@ -456,10 +446,10 @@ export const demos: Demo[] = [
       "accent2": "#C4A35A"
     },
     "features": [
-      "Columns",
-      "Cards",
-      "Drag affordance",
-      "WIP limits"
+      "Funnel",
+      "Cohorts",
+      "Export",
+      "Alerts"
     ]
   },
   {
@@ -468,9 +458,9 @@ export const demos: Demo[] = [
     "name": "CoreVault",
     "nameHe": "ניהול סיסמאות לצוותים",
     "tagline": "Share secrets without screenshots",
-    "category": "education",
-    "categoryHe": "למידה וחינוך",
-    "layout": "calendar",
+    "category": "productivity",
+    "categoryHe": "פרודוקטיביות",
+    "layout": "dashboard",
     "builtWith": "Copilot",
     "palette": {
       "bg": "#0A1628",
@@ -481,10 +471,10 @@ export const demos: Demo[] = [
       "accent2": "#22D3EE"
     },
     "features": [
-      "Week view",
-      "Events",
-      "Availability",
-      "Reminders"
+      "KPI cards",
+      "Charts",
+      "Activity feed",
+      "Filters"
     ]
   },
   {
@@ -493,9 +483,9 @@ export const demos: Demo[] = [
     "name": "LeafMeal",
     "nameHe": "תכנון ארוחות שבועי",
     "tagline": "Plan meals that match your pantry",
-    "category": "productivity",
-    "categoryHe": "פרודוקטיביות",
-    "layout": "analytics",
+    "category": "health",
+    "categoryHe": "בריאות וכושר",
+    "layout": "calendar",
     "builtWith": "Claude",
     "palette": {
       "bg": "#FFF8F0",
@@ -506,10 +496,10 @@ export const demos: Demo[] = [
       "accent2": "#2F5D50"
     },
     "features": [
-      "Funnel",
-      "Cohorts",
-      "Export",
-      "Alerts"
+      "Week view",
+      "Events",
+      "Availability",
+      "Reminders"
     ]
   },
   {
@@ -518,9 +508,9 @@ export const demos: Demo[] = [
     "name": "SignalDesk",
     "nameHe": "מוקד ניטור אירועים",
     "tagline": "Spot incidents before customers do",
-    "category": "social",
-    "categoryHe": "חברתי ותוכן",
-    "layout": "feed",
+    "category": "ops",
+    "categoryHe": "תפעול ולוגיסטיקה",
+    "layout": "dashboard",
     "builtWith": "Cursor",
     "palette": {
       "bg": "#0D1117",
@@ -531,10 +521,10 @@ export const demos: Demo[] = [
       "accent2": "#58A6FF"
     },
     "features": [
-      "Posts",
-      "Comments",
-      "Reactions",
-      "Compose"
+      "KPI cards",
+      "Charts",
+      "Activity feed",
+      "Filters"
     ]
   },
   {
@@ -543,9 +533,9 @@ export const demos: Demo[] = [
     "name": "QuillPress",
     "nameHe": "עורך תוכן עם AI",
     "tagline": "Draft posts that keep your voice",
-    "category": "travel",
-    "categoryHe": "נסיעות ואירוח",
-    "layout": "form",
+    "category": "ai",
+    "categoryHe": "כלי AI וצ׳אט",
+    "layout": "studio",
     "builtWith": "GPT-4",
     "palette": {
       "bg": "#F5F0EB",
@@ -556,10 +546,10 @@ export const demos: Demo[] = [
       "accent2": "#B45309"
     },
     "features": [
-      "Multi-step",
-      "Validation",
-      "Progress",
-      "Review"
+      "Canvas",
+      "Layers",
+      "AI assist",
+      "Export"
     ]
   },
   {
@@ -568,9 +558,9 @@ export const demos: Demo[] = [
     "name": "RidgeFit",
     "nameHe": "אפליקציית אימונים",
     "tagline": "Programs that adapt to your week",
-    "category": "ops",
-    "categoryHe": "תפעול ולוגיסטיקה",
-    "layout": "studio",
+    "category": "health",
+    "categoryHe": "בריאות וכושר",
+    "layout": "landing",
     "builtWith": "Gemini",
     "palette": {
       "bg": "#14121A",
@@ -581,10 +571,10 @@ export const demos: Demo[] = [
       "accent2": "#A78BFA"
     },
     "features": [
-      "Canvas",
-      "Layers",
-      "AI assist",
-      "Export"
+      "Hero",
+      "Features",
+      "CTA",
+      "Social proof"
     ]
   },
   {
@@ -593,9 +583,9 @@ export const demos: Demo[] = [
     "name": "NimbusDocs",
     "nameHe": "מסמכים שיתופיים",
     "tagline": "Docs that stay in sync with reality",
-    "category": "saas",
-    "categoryHe": "SaaS ודשבורדים",
-    "layout": "landing",
+    "category": "productivity",
+    "categoryHe": "פרודוקטיביות",
+    "layout": "feed",
     "builtWith": "v0",
     "palette": {
       "bg": "#0B1220",
@@ -606,10 +596,10 @@ export const demos: Demo[] = [
       "accent2": "#FF6B4A"
     },
     "features": [
-      "Hero",
-      "Features",
-      "CTA",
-      "Social proof"
+      "Posts",
+      "Comments",
+      "Reactions",
+      "Compose"
     ]
   },
   {
@@ -618,9 +608,9 @@ export const demos: Demo[] = [
     "name": "AmberPay",
     "nameHe": "תשלומים לעסקים מקומיים",
     "tagline": "Accept payments without the friction",
-    "category": "ai",
-    "categoryHe": "כלי AI וצ׳אט",
-    "layout": "dashboard",
+    "category": "finance",
+    "categoryHe": "פיננסים ובנקים",
+    "layout": "landing",
     "builtWith": "Bolt",
     "palette": {
       "bg": "#FAF7F2",
@@ -631,10 +621,10 @@ export const demos: Demo[] = [
       "accent2": "#D97706"
     },
     "features": [
-      "KPI cards",
-      "Charts",
-      "Activity feed",
-      "Filters"
+      "Hero",
+      "Features",
+      "CTA",
+      "Social proof"
     ]
   },
   {
@@ -643,9 +633,9 @@ export const demos: Demo[] = [
     "name": "WillowCare",
     "nameHe": "ניהול מרפאה קטנה",
     "tagline": "Appointments, notes, reminders",
-    "category": "commerce",
-    "categoryHe": "מסחר וחנויות",
-    "layout": "chat",
+    "category": "health",
+    "categoryHe": "בריאות וכושר",
+    "layout": "calendar",
     "builtWith": "Lovable",
     "palette": {
       "bg": "#111111",
@@ -656,10 +646,10 @@ export const demos: Demo[] = [
       "accent2": "#E85D04"
     },
     "features": [
-      "Thread list",
-      "Composer",
-      "Suggestions",
-      "Sources"
+      "Week view",
+      "Events",
+      "Availability",
+      "Reminders"
     ]
   },
   {
@@ -668,9 +658,9 @@ export const demos: Demo[] = [
     "name": "PrismAds",
     "nameHe": "ניהול קמפיינים מרוכז",
     "tagline": "See ad spend and lift together",
-    "category": "health",
-    "categoryHe": "בריאות וכושר",
-    "layout": "marketplace",
+    "category": "saas",
+    "categoryHe": "SaaS ודשבורדים",
+    "layout": "analytics",
     "builtWith": "Copilot",
     "palette": {
       "bg": "#F0F4F8",
@@ -681,10 +671,10 @@ export const demos: Demo[] = [
       "accent2": "#059669"
     },
     "features": [
-      "Product grid",
-      "Filters",
-      "Cart",
-      "Ratings"
+      "Funnel",
+      "Cohorts",
+      "Export",
+      "Alerts"
     ]
   },
   {
@@ -693,9 +683,9 @@ export const demos: Demo[] = [
     "name": "TideTravel",
     "nameHe": "מתכנן טיולים חכם",
     "tagline": "Itineraries that survive real travel",
-    "category": "finance",
-    "categoryHe": "פיננסים ובנקים",
-    "layout": "kanban",
+    "category": "travel",
+    "categoryHe": "נסיעות ואירוח",
+    "layout": "landing",
     "builtWith": "Claude",
     "palette": {
       "bg": "#1A0F0A",
@@ -706,10 +696,10 @@ export const demos: Demo[] = [
       "accent2": "#C4A35A"
     },
     "features": [
-      "Columns",
-      "Cards",
-      "Drag affordance",
-      "WIP limits"
+      "Hero",
+      "Features",
+      "CTA",
+      "Social proof"
     ]
   },
   {
@@ -718,9 +708,9 @@ export const demos: Demo[] = [
     "name": "StackBoard",
     "nameHe": "לוח משימות לצוותים",
     "tagline": "Kanban without the bloat",
-    "category": "education",
-    "categoryHe": "למידה וחינוך",
-    "layout": "calendar",
+    "category": "productivity",
+    "categoryHe": "פרודוקטיביות",
+    "layout": "kanban",
     "builtWith": "Cursor",
     "palette": {
       "bg": "#0A1628",
@@ -731,10 +721,10 @@ export const demos: Demo[] = [
       "accent2": "#22D3EE"
     },
     "features": [
-      "Week view",
-      "Events",
-      "Availability",
-      "Reminders"
+      "Columns",
+      "Cards",
+      "Drag affordance",
+      "WIP limits"
     ]
   },
   {
@@ -743,8 +733,8 @@ export const demos: Demo[] = [
     "name": "AuroraFX",
     "nameHe": "מעקב מטבעות והשקעות",
     "tagline": "Markets, portfolios, calm charts",
-    "category": "productivity",
-    "categoryHe": "פרודוקטיביות",
+    "category": "finance",
+    "categoryHe": "פיננסים ובנקים",
     "layout": "analytics",
     "builtWith": "GPT-4",
     "palette": {
@@ -768,9 +758,9 @@ export const demos: Demo[] = [
     "name": "HintTutor",
     "nameHe": "מורה פרטי AI",
     "tagline": "Explain until it clicks",
-    "category": "social",
-    "categoryHe": "חברתי ותוכן",
-    "layout": "feed",
+    "category": "education",
+    "categoryHe": "למידה וחינוך",
+    "layout": "chat",
     "builtWith": "Gemini",
     "palette": {
       "bg": "#0D1117",
@@ -781,10 +771,10 @@ export const demos: Demo[] = [
       "accent2": "#58A6FF"
     },
     "features": [
-      "Posts",
-      "Comments",
-      "Reactions",
-      "Compose"
+      "Thread list",
+      "Composer",
+      "Suggestions",
+      "Sources"
     ]
   },
   {
@@ -793,9 +783,9 @@ export const demos: Demo[] = [
     "name": "ParcelHub",
     "nameHe": "מרכז משלוחים לעסקים",
     "tagline": "Label, track, and resolve delays",
-    "category": "travel",
-    "categoryHe": "נסיעות ואירוח",
-    "layout": "form",
+    "category": "ops",
+    "categoryHe": "תפעול ולוגיסטיקה",
+    "layout": "dashboard",
     "builtWith": "v0",
     "palette": {
       "bg": "#F5F0EB",
@@ -806,10 +796,10 @@ export const demos: Demo[] = [
       "accent2": "#B45309"
     },
     "features": [
-      "Multi-step",
-      "Validation",
-      "Progress",
-      "Review"
+      "KPI cards",
+      "Charts",
+      "Activity feed",
+      "Filters"
     ]
   },
   {
@@ -818,9 +808,9 @@ export const demos: Demo[] = [
     "name": "MossGarden",
     "nameHe": "קהילה ליוצרים",
     "tagline": "Share process, not just polish",
-    "category": "ops",
-    "categoryHe": "תפעול ולוגיסטיקה",
-    "layout": "studio",
+    "category": "social",
+    "categoryHe": "חברתי ותוכן",
+    "layout": "feed",
     "builtWith": "Bolt",
     "palette": {
       "bg": "#14121A",
@@ -831,10 +821,10 @@ export const demos: Demo[] = [
       "accent2": "#A78BFA"
     },
     "features": [
-      "Canvas",
-      "Layers",
-      "AI assist",
-      "Export"
+      "Posts",
+      "Comments",
+      "Reactions",
+      "Compose"
     ]
   },
   {
@@ -843,9 +833,9 @@ export const demos: Demo[] = [
     "name": "VoltDesk",
     "nameHe": "דשבורד אנרגיה לבית חכם",
     "tagline": "See usage and cut waste",
-    "category": "saas",
-    "categoryHe": "SaaS ודשבורדים",
-    "layout": "landing",
+    "category": "ops",
+    "categoryHe": "תפעול ולוגיסטיקה",
+    "layout": "dashboard",
     "builtWith": "Lovable",
     "palette": {
       "bg": "#0B1220",
@@ -856,10 +846,10 @@ export const demos: Demo[] = [
       "accent2": "#FF6B4A"
     },
     "features": [
-      "Hero",
-      "Features",
-      "CTA",
-      "Social proof"
+      "KPI cards",
+      "Charts",
+      "Activity feed",
+      "Filters"
     ]
   },
   {
@@ -868,9 +858,9 @@ export const demos: Demo[] = [
     "name": "PaperTrail",
     "nameHe": "ניהול חוזים משפטיים",
     "tagline": "Contracts with clear next actions",
-    "category": "ai",
-    "categoryHe": "כלי AI וצ׳אט",
-    "layout": "dashboard",
+    "category": "saas",
+    "categoryHe": "SaaS ודשבורדים",
+    "layout": "kanban",
     "builtWith": "Copilot",
     "palette": {
       "bg": "#FAF7F2",
@@ -881,10 +871,10 @@ export const demos: Demo[] = [
       "accent2": "#D97706"
     },
     "features": [
-      "KPI cards",
-      "Charts",
-      "Activity feed",
-      "Filters"
+      "Columns",
+      "Cards",
+      "Drag affordance",
+      "WIP limits"
     ]
   },
   {
@@ -895,7 +885,7 @@ export const demos: Demo[] = [
     "tagline": "Curated looks, effortless checkout",
     "category": "commerce",
     "categoryHe": "מסחר וחנויות",
-    "layout": "chat",
+    "layout": "marketplace",
     "builtWith": "Claude",
     "palette": {
       "bg": "#111111",
@@ -906,10 +896,10 @@ export const demos: Demo[] = [
       "accent2": "#E85D04"
     },
     "features": [
-      "Thread list",
-      "Composer",
-      "Suggestions",
-      "Sources"
+      "Product grid",
+      "Filters",
+      "Cart",
+      "Ratings"
     ]
   },
   {
@@ -918,9 +908,9 @@ export const demos: Demo[] = [
     "name": "RadarSales",
     "nameHe": "פייפליין מכירות ויזואלי",
     "tagline": "Forecast without guesswork",
-    "category": "health",
-    "categoryHe": "בריאות וכושר",
-    "layout": "marketplace",
+    "category": "saas",
+    "categoryHe": "SaaS ודשבורדים",
+    "layout": "kanban",
     "builtWith": "Cursor",
     "palette": {
       "bg": "#F0F4F8",
@@ -931,10 +921,10 @@ export const demos: Demo[] = [
       "accent2": "#059669"
     },
     "features": [
-      "Product grid",
-      "Filters",
-      "Cart",
-      "Ratings"
+      "Columns",
+      "Cards",
+      "Drag affordance",
+      "WIP limits"
     ]
   },
   {
@@ -943,9 +933,9 @@ export const demos: Demo[] = [
     "name": "SoftClinic",
     "nameHe": "ניהול תורים למרפאות",
     "tagline": "Fewer no-shows, clearer days",
-    "category": "finance",
-    "categoryHe": "פיננסים ובנקים",
-    "layout": "kanban",
+    "category": "health",
+    "categoryHe": "בריאות וכושר",
+    "layout": "calendar",
     "builtWith": "GPT-4",
     "palette": {
       "bg": "#1A0F0A",
@@ -956,10 +946,10 @@ export const demos: Demo[] = [
       "accent2": "#C4A35A"
     },
     "features": [
-      "Columns",
-      "Cards",
-      "Drag affordance",
-      "WIP limits"
+      "Week view",
+      "Events",
+      "Availability",
+      "Reminders"
     ]
   },
   {
@@ -968,9 +958,9 @@ export const demos: Demo[] = [
     "name": "CraftBrew",
     "nameHe": "הזמנות למבשלות בוטיק",
     "tagline": "Orders, batches, and tasting notes",
-    "category": "education",
-    "categoryHe": "למידה וחינוך",
-    "layout": "calendar",
+    "category": "commerce",
+    "categoryHe": "מסחר וחנויות",
+    "layout": "form",
     "builtWith": "Gemini",
     "palette": {
       "bg": "#0A1628",
@@ -981,10 +971,10 @@ export const demos: Demo[] = [
       "accent2": "#22D3EE"
     },
     "features": [
-      "Week view",
-      "Events",
-      "Availability",
-      "Reminders"
+      "Multi-step",
+      "Validation",
+      "Progress",
+      "Review"
     ]
   },
   {
@@ -995,7 +985,7 @@ export const demos: Demo[] = [
     "tagline": "Goals that stay visible",
     "category": "productivity",
     "categoryHe": "פרודוקטיביות",
-    "layout": "analytics",
+    "layout": "dashboard",
     "builtWith": "v0",
     "palette": {
       "bg": "#FFF8F0",
@@ -1006,10 +996,10 @@ export const demos: Demo[] = [
       "accent2": "#2F5D50"
     },
     "features": [
-      "Funnel",
-      "Cohorts",
-      "Export",
-      "Alerts"
+      "KPI cards",
+      "Charts",
+      "Activity feed",
+      "Filters"
     ]
   },
   {
@@ -1020,7 +1010,7 @@ export const demos: Demo[] = [
     "tagline": "Publish essays with quiet design",
     "category": "social",
     "categoryHe": "חברתי ותוכן",
-    "layout": "feed",
+    "layout": "landing",
     "builtWith": "Bolt",
     "palette": {
       "bg": "#0D1117",
@@ -1031,10 +1021,10 @@ export const demos: Demo[] = [
       "accent2": "#58A6FF"
     },
     "features": [
-      "Posts",
-      "Comments",
-      "Reactions",
-      "Compose"
+      "Hero",
+      "Features",
+      "CTA",
+      "Social proof"
     ]
   },
   {
@@ -1043,9 +1033,9 @@ export const demos: Demo[] = [
     "name": "FleetLine",
     "nameHe": "ניהול צי רכב",
     "tagline": "Routes, maintenance, drivers",
-    "category": "travel",
-    "categoryHe": "נסיעות ואירוח",
-    "layout": "form",
+    "category": "ops",
+    "categoryHe": "תפעול ולוגיסטיקה",
+    "layout": "analytics",
     "builtWith": "Lovable",
     "palette": {
       "bg": "#F5F0EB",
@@ -1056,10 +1046,10 @@ export const demos: Demo[] = [
       "accent2": "#B45309"
     },
     "features": [
-      "Multi-step",
-      "Validation",
-      "Progress",
-      "Review"
+      "Funnel",
+      "Cohorts",
+      "Export",
+      "Alerts"
     ]
   },
   {
@@ -1068,9 +1058,9 @@ export const demos: Demo[] = [
     "name": "GlowSkin",
     "nameHe": "יומן טיפוח עור",
     "tagline": "Track routines and results",
-    "category": "ops",
-    "categoryHe": "תפעול ולוגיסטיקה",
-    "layout": "studio",
+    "category": "health",
+    "categoryHe": "בריאות וכושר",
+    "layout": "form",
     "builtWith": "Copilot",
     "palette": {
       "bg": "#14121A",
@@ -1081,10 +1071,10 @@ export const demos: Demo[] = [
       "accent2": "#A78BFA"
     },
     "features": [
-      "Canvas",
-      "Layers",
-      "AI assist",
-      "Export"
+      "Multi-step",
+      "Validation",
+      "Progress",
+      "Review"
     ]
   },
   {
@@ -1093,9 +1083,9 @@ export const demos: Demo[] = [
     "name": "ByteBake",
     "nameHe": "הזמנות למאפייה",
     "tagline": "Pre-orders that protect margins",
-    "category": "saas",
-    "categoryHe": "SaaS ודשבורדים",
-    "layout": "landing",
+    "category": "commerce",
+    "categoryHe": "מסחר וחנויות",
+    "layout": "marketplace",
     "builtWith": "Claude",
     "palette": {
       "bg": "#0B1220",
@@ -1106,10 +1096,10 @@ export const demos: Demo[] = [
       "accent2": "#FF6B4A"
     },
     "features": [
-      "Hero",
-      "Features",
-      "CTA",
-      "Social proof"
+      "Product grid",
+      "Filters",
+      "Cart",
+      "Ratings"
     ]
   },
   {
@@ -1118,9 +1108,9 @@ export const demos: Demo[] = [
     "name": "ClearClaim",
     "nameHe": "מעקב תביעות ביטוח",
     "tagline": "Status updates customers understand",
-    "category": "ai",
-    "categoryHe": "כלי AI וצ׳אט",
-    "layout": "dashboard",
+    "category": "finance",
+    "categoryHe": "פיננסים ובנקים",
+    "layout": "kanban",
     "builtWith": "Cursor",
     "palette": {
       "bg": "#FAF7F2",
@@ -1131,10 +1121,10 @@ export const demos: Demo[] = [
       "accent2": "#D97706"
     },
     "features": [
-      "KPI cards",
-      "Charts",
-      "Activity feed",
-      "Filters"
+      "Columns",
+      "Cards",
+      "Drag affordance",
+      "WIP limits"
     ]
   },
   {
@@ -1143,9 +1133,9 @@ export const demos: Demo[] = [
     "name": "SpanBridge",
     "nameHe": "ניהול פרויקטי בנייה",
     "tagline": "Milestones across sites",
-    "category": "commerce",
-    "categoryHe": "מסחר וחנויות",
-    "layout": "chat",
+    "category": "ops",
+    "categoryHe": "תפעול ולוגיסטיקה",
+    "layout": "kanban",
     "builtWith": "GPT-4",
     "palette": {
       "bg": "#111111",
@@ -1156,10 +1146,10 @@ export const demos: Demo[] = [
       "accent2": "#E85D04"
     },
     "features": [
-      "Thread list",
-      "Composer",
-      "Suggestions",
-      "Sources"
+      "Columns",
+      "Cards",
+      "Drag affordance",
+      "WIP limits"
     ]
   },
   {
@@ -1168,9 +1158,9 @@ export const demos: Demo[] = [
     "name": "MuseRadio",
     "nameHe": "פלייליסטים שיתופיים",
     "tagline": "Curate shows with friends",
-    "category": "health",
-    "categoryHe": "בריאות וכושר",
-    "layout": "marketplace",
+    "category": "social",
+    "categoryHe": "חברתי ותוכן",
+    "layout": "feed",
     "builtWith": "Gemini",
     "palette": {
       "bg": "#F0F4F8",
@@ -1181,10 +1171,10 @@ export const demos: Demo[] = [
       "accent2": "#059669"
     },
     "features": [
-      "Product grid",
-      "Filters",
-      "Cart",
-      "Ratings"
+      "Posts",
+      "Comments",
+      "Reactions",
+      "Compose"
     ]
   },
   {
@@ -1193,9 +1183,9 @@ export const demos: Demo[] = [
     "name": "AnchorLegal",
     "nameHe": "פורטל לקוחות למשרד עו״ד",
     "tagline": "Case updates without phone tag",
-    "category": "finance",
-    "categoryHe": "פיננסים ובנקים",
-    "layout": "kanban",
+    "category": "saas",
+    "categoryHe": "SaaS ודשבורדים",
+    "layout": "dashboard",
     "builtWith": "v0",
     "palette": {
       "bg": "#1A0F0A",
@@ -1206,10 +1196,10 @@ export const demos: Demo[] = [
       "accent2": "#C4A35A"
     },
     "features": [
-      "Columns",
-      "Cards",
-      "Drag affordance",
-      "WIP limits"
+      "KPI cards",
+      "Charts",
+      "Activity feed",
+      "Filters"
     ]
   },
   {
@@ -1218,9 +1208,9 @@ export const demos: Demo[] = [
     "name": "RipplePay",
     "nameHe": "העברות בין חברים",
     "tagline": "Split bills without awkwardness",
-    "category": "education",
-    "categoryHe": "למידה וחינוך",
-    "layout": "calendar",
+    "category": "finance",
+    "categoryHe": "פיננסים ובנקים",
+    "layout": "landing",
     "builtWith": "Bolt",
     "palette": {
       "bg": "#0A1628",
@@ -1231,10 +1221,10 @@ export const demos: Demo[] = [
       "accent2": "#22D3EE"
     },
     "features": [
-      "Week view",
-      "Events",
-      "Availability",
-      "Reminders"
+      "Hero",
+      "Features",
+      "CTA",
+      "Social proof"
     ]
   },
   {
@@ -1243,9 +1233,9 @@ export const demos: Demo[] = [
     "name": "CedarLodge",
     "nameHe": "ניהול צימרים",
     "tagline": "Bookings, cleanings, reviews",
-    "category": "productivity",
-    "categoryHe": "פרודוקטיביות",
-    "layout": "analytics",
+    "category": "travel",
+    "categoryHe": "נסיעות ואירוח",
+    "layout": "calendar",
     "builtWith": "Lovable",
     "palette": {
       "bg": "#FFF8F0",
@@ -1256,10 +1246,10 @@ export const demos: Demo[] = [
       "accent2": "#2F5D50"
     },
     "features": [
-      "Funnel",
-      "Cohorts",
-      "Export",
-      "Alerts"
+      "Week view",
+      "Events",
+      "Availability",
+      "Reminders"
     ]
   },
   {
@@ -1268,9 +1258,9 @@ export const demos: Demo[] = [
     "name": "FocusRing",
     "nameHe": "טיימר פומודורו לצוותים",
     "tagline": "Deep work, shared cadence",
-    "category": "social",
-    "categoryHe": "חברתי ותוכן",
-    "layout": "feed",
+    "category": "productivity",
+    "categoryHe": "פרודוקטיביות",
+    "layout": "landing",
     "builtWith": "Copilot",
     "palette": {
       "bg": "#0D1117",
@@ -1281,10 +1271,10 @@ export const demos: Demo[] = [
       "accent2": "#58A6FF"
     },
     "features": [
-      "Posts",
-      "Comments",
-      "Reactions",
-      "Compose"
+      "Hero",
+      "Features",
+      "CTA",
+      "Social proof"
     ]
   },
   {
@@ -1293,9 +1283,9 @@ export const demos: Demo[] = [
     "name": "BrightPath",
     "nameHe": "מסלולי קריירה לעובדים",
     "tagline": "Skills maps that guide growth",
-    "category": "travel",
-    "categoryHe": "נסיעות ואירוח",
-    "layout": "form",
+    "category": "education",
+    "categoryHe": "למידה וחינוך",
+    "layout": "analytics",
     "builtWith": "Claude",
     "palette": {
       "bg": "#F5F0EB",
@@ -1306,10 +1296,10 @@ export const demos: Demo[] = [
       "accent2": "#B45309"
     },
     "features": [
-      "Multi-step",
-      "Validation",
-      "Progress",
-      "Review"
+      "Funnel",
+      "Cohorts",
+      "Export",
+      "Alerts"
     ]
   },
   {
@@ -1318,9 +1308,9 @@ export const demos: Demo[] = [
     "name": "IronGym",
     "nameHe": "ניהול מנויים לחדר כושר",
     "tagline": "Check-ins, plans, renewals",
-    "category": "ops",
-    "categoryHe": "תפעול ולוגיסטיקה",
-    "layout": "studio",
+    "category": "health",
+    "categoryHe": "בריאות וכושר",
+    "layout": "dashboard",
     "builtWith": "Cursor",
     "palette": {
       "bg": "#14121A",
@@ -1331,10 +1321,10 @@ export const demos: Demo[] = [
       "accent2": "#A78BFA"
     },
     "features": [
-      "Canvas",
-      "Layers",
-      "AI assist",
-      "Export"
+      "KPI cards",
+      "Charts",
+      "Activity feed",
+      "Filters"
     ]
   },
   {
@@ -1343,9 +1333,9 @@ export const demos: Demo[] = [
     "name": "NestHome",
     "nameHe": "לוח מודעות לבניין",
     "tagline": "Neighbors, notices, bookings",
-    "category": "saas",
-    "categoryHe": "SaaS ודשבורדים",
-    "layout": "landing",
+    "category": "social",
+    "categoryHe": "חברתי ותוכן",
+    "layout": "feed",
     "builtWith": "GPT-4",
     "palette": {
       "bg": "#0B1220",
@@ -1356,10 +1346,10 @@ export const demos: Demo[] = [
       "accent2": "#FF6B4A"
     },
     "features": [
-      "Hero",
-      "Features",
-      "CTA",
-      "Social proof"
+      "Posts",
+      "Comments",
+      "Reactions",
+      "Compose"
     ]
   },
   {
@@ -1368,9 +1358,9 @@ export const demos: Demo[] = [
     "name": "SparkHire",
     "nameHe": "גיוס ראשוני לסטארטאפ",
     "tagline": "Scorecards that stay fair",
-    "category": "ai",
-    "categoryHe": "כלי AI וצ׳אט",
-    "layout": "dashboard",
+    "category": "saas",
+    "categoryHe": "SaaS ודשבורדים",
+    "layout": "kanban",
     "builtWith": "Gemini",
     "palette": {
       "bg": "#FAF7F2",
@@ -1381,10 +1371,10 @@ export const demos: Demo[] = [
       "accent2": "#D97706"
     },
     "features": [
-      "KPI cards",
-      "Charts",
-      "Activity feed",
-      "Filters"
+      "Columns",
+      "Cards",
+      "Drag affordance",
+      "WIP limits"
     ]
   },
   {
@@ -1395,7 +1385,7 @@ export const demos: Demo[] = [
     "tagline": "Sell digital goods cleanly",
     "category": "commerce",
     "categoryHe": "מסחר וחנויות",
-    "layout": "chat",
+    "layout": "marketplace",
     "builtWith": "v0",
     "palette": {
       "bg": "#111111",
@@ -1406,10 +1396,10 @@ export const demos: Demo[] = [
       "accent2": "#E85D04"
     },
     "features": [
-      "Thread list",
-      "Composer",
-      "Suggestions",
-      "Sources"
+      "Product grid",
+      "Filters",
+      "Cart",
+      "Ratings"
     ]
   },
   {
@@ -1418,9 +1408,9 @@ export const demos: Demo[] = [
     "name": "MonoType",
     "nameHe": "עורך פונטים פשוט",
     "tagline": "Tweak glyphs with AI hints",
-    "category": "health",
-    "categoryHe": "בריאות וכושר",
-    "layout": "marketplace",
+    "category": "ai",
+    "categoryHe": "כלי AI וצ׳אט",
+    "layout": "studio",
     "builtWith": "Bolt",
     "palette": {
       "bg": "#F0F4F8",
@@ -1431,10 +1421,10 @@ export const demos: Demo[] = [
       "accent2": "#059669"
     },
     "features": [
-      "Product grid",
-      "Filters",
-      "Cart",
-      "Ratings"
+      "Canvas",
+      "Layers",
+      "AI assist",
+      "Export"
     ]
   },
   {
@@ -1443,9 +1433,9 @@ export const demos: Demo[] = [
     "name": "LakeView",
     "nameHe": "דשבורד נדל״ן",
     "tagline": "Listings, leads, showings",
-    "category": "finance",
-    "categoryHe": "פיננסים ובנקים",
-    "layout": "kanban",
+    "category": "saas",
+    "categoryHe": "SaaS ודשבורדים",
+    "layout": "dashboard",
     "builtWith": "Lovable",
     "palette": {
       "bg": "#1A0F0A",
@@ -1456,10 +1446,10 @@ export const demos: Demo[] = [
       "accent2": "#C4A35A"
     },
     "features": [
-      "Columns",
-      "Cards",
-      "Drag affordance",
-      "WIP limits"
+      "KPI cards",
+      "Charts",
+      "Activity feed",
+      "Filters"
     ]
   },
   {
@@ -1468,9 +1458,9 @@ export const demos: Demo[] = [
     "name": "HoneyPot",
     "nameHe": "ניהול מלאי למכולת",
     "tagline": "Restock before shelves empty",
-    "category": "education",
-    "categoryHe": "למידה וחינוך",
-    "layout": "calendar",
+    "category": "ops",
+    "categoryHe": "תפעול ולוגיסטיקה",
+    "layout": "analytics",
     "builtWith": "Copilot",
     "palette": {
       "bg": "#0A1628",
@@ -1481,10 +1471,10 @@ export const demos: Demo[] = [
       "accent2": "#22D3EE"
     },
     "features": [
-      "Week view",
-      "Events",
-      "Availability",
-      "Reminders"
+      "Funnel",
+      "Cohorts",
+      "Export",
+      "Alerts"
     ]
   },
   {
@@ -1493,9 +1483,9 @@ export const demos: Demo[] = [
     "name": "SlideDeck",
     "nameHe": "מצגות שנוצרות מתוכן",
     "tagline": "Turn notes into decks fast",
-    "category": "productivity",
-    "categoryHe": "פרודוקטיביות",
-    "layout": "analytics",
+    "category": "ai",
+    "categoryHe": "כלי AI וצ׳אט",
+    "layout": "studio",
     "builtWith": "Claude",
     "palette": {
       "bg": "#FFF8F0",
@@ -1506,10 +1496,10 @@ export const demos: Demo[] = [
       "accent2": "#2F5D50"
     },
     "features": [
-      "Funnel",
-      "Cohorts",
-      "Export",
-      "Alerts"
+      "Canvas",
+      "Layers",
+      "AI assist",
+      "Export"
     ]
   },
   {
@@ -1518,9 +1508,9 @@ export const demos: Demo[] = [
     "name": "QuietRoom",
     "nameHe": "הזמנת חדרי ישיבות",
     "tagline": "Rooms that stay available",
-    "category": "social",
-    "categoryHe": "חברתי ותוכן",
-    "layout": "feed",
+    "category": "productivity",
+    "categoryHe": "פרודוקטיביות",
+    "layout": "calendar",
     "builtWith": "Cursor",
     "palette": {
       "bg": "#0D1117",
@@ -1531,10 +1521,10 @@ export const demos: Demo[] = [
       "accent2": "#58A6FF"
     },
     "features": [
-      "Posts",
-      "Comments",
-      "Reactions",
-      "Compose"
+      "Week view",
+      "Events",
+      "Availability",
+      "Reminders"
     ]
   },
   {
@@ -1545,7 +1535,7 @@ export const demos: Demo[] = [
     "tagline": "Routes with elevation and tips",
     "category": "travel",
     "categoryHe": "נסיעות ואירוח",
-    "layout": "form",
+    "layout": "landing",
     "builtWith": "GPT-4",
     "palette": {
       "bg": "#F5F0EB",
@@ -1556,10 +1546,10 @@ export const demos: Demo[] = [
       "accent2": "#B45309"
     },
     "features": [
-      "Multi-step",
-      "Validation",
-      "Progress",
-      "Review"
+      "Hero",
+      "Features",
+      "CTA",
+      "Social proof"
     ]
   },
   {
@@ -1568,9 +1558,9 @@ export const demos: Demo[] = [
     "name": "BadgePass",
     "nameHe": "כרטיסים לאירועים",
     "tagline": "Check-in that feels instant",
-    "category": "ops",
-    "categoryHe": "תפעול ולוגיסטיקה",
-    "layout": "studio",
+    "category": "travel",
+    "categoryHe": "נסיעות ואירוח",
+    "layout": "form",
     "builtWith": "Gemini",
     "palette": {
       "bg": "#14121A",
@@ -1581,10 +1571,10 @@ export const demos: Demo[] = [
       "accent2": "#A78BFA"
     },
     "features": [
-      "Canvas",
-      "Layers",
-      "AI assist",
-      "Export"
+      "Multi-step",
+      "Validation",
+      "Progress",
+      "Review"
     ]
   },
   {
@@ -1593,9 +1583,9 @@ export const demos: Demo[] = [
     "name": "CopperWire",
     "nameHe": "מעקב תקציב פרויקט",
     "tagline": "Burn rate without surprises",
-    "category": "saas",
-    "categoryHe": "SaaS ודשבורדים",
-    "layout": "landing",
+    "category": "finance",
+    "categoryHe": "פיננסים ובנקים",
+    "layout": "analytics",
     "builtWith": "v0",
     "palette": {
       "bg": "#0B1220",
@@ -1606,10 +1596,10 @@ export const demos: Demo[] = [
       "accent2": "#FF6B4A"
     },
     "features": [
-      "Hero",
-      "Features",
-      "CTA",
-      "Social proof"
+      "Funnel",
+      "Cohorts",
+      "Export",
+      "Alerts"
     ]
   },
   {
@@ -1618,9 +1608,9 @@ export const demos: Demo[] = [
     "name": "SoftLaunch",
     "nameHe": "עמוד המתנה למוצרים",
     "tagline": "Collect emails that convert",
-    "category": "ai",
-    "categoryHe": "כלי AI וצ׳אט",
-    "layout": "dashboard",
+    "category": "saas",
+    "categoryHe": "SaaS ודשבורדים",
+    "layout": "landing",
     "builtWith": "Bolt",
     "palette": {
       "bg": "#FAF7F2",
@@ -1631,10 +1621,10 @@ export const demos: Demo[] = [
       "accent2": "#D97706"
     },
     "features": [
-      "KPI cards",
-      "Charts",
-      "Activity feed",
-      "Filters"
+      "Hero",
+      "Features",
+      "CTA",
+      "Social proof"
     ]
   },
   {
@@ -1645,7 +1635,7 @@ export const demos: Demo[] = [
     "tagline": "List, chat, meetup",
     "category": "commerce",
     "categoryHe": "מסחר וחנויות",
-    "layout": "chat",
+    "layout": "marketplace",
     "builtWith": "Lovable",
     "palette": {
       "bg": "#111111",
@@ -1656,10 +1646,10 @@ export const demos: Demo[] = [
       "accent2": "#E85D04"
     },
     "features": [
-      "Thread list",
-      "Composer",
-      "Suggestions",
-      "Sources"
+      "Product grid",
+      "Filters",
+      "Cart",
+      "Ratings"
     ]
   },
   {
@@ -1670,7 +1660,7 @@ export const demos: Demo[] = [
     "tagline": "Tiny habits, visible streaks",
     "category": "health",
     "categoryHe": "בריאות וכושר",
-    "layout": "marketplace",
+    "layout": "form",
     "builtWith": "Copilot",
     "palette": {
       "bg": "#F0F4F8",
@@ -1681,10 +1671,10 @@ export const demos: Demo[] = [
       "accent2": "#059669"
     },
     "features": [
-      "Product grid",
-      "Filters",
-      "Cart",
-      "Ratings"
+      "Multi-step",
+      "Validation",
+      "Progress",
+      "Review"
     ]
   },
   {
@@ -1693,9 +1683,9 @@ export const demos: Demo[] = [
     "name": "GridLock",
     "nameHe": "ניהול חניות לעיר",
     "tagline": "Spots, permits, payments",
-    "category": "finance",
-    "categoryHe": "פיננסים ובנקים",
-    "layout": "kanban",
+    "category": "ops",
+    "categoryHe": "תפעול ולוגיסטיקה",
+    "layout": "dashboard",
     "builtWith": "Claude",
     "palette": {
       "bg": "#1A0F0A",
@@ -1706,10 +1696,10 @@ export const demos: Demo[] = [
       "accent2": "#C4A35A"
     },
     "features": [
-      "Columns",
-      "Cards",
-      "Drag affordance",
-      "WIP limits"
+      "KPI cards",
+      "Charts",
+      "Activity feed",
+      "Filters"
     ]
   },
   {
@@ -1718,9 +1708,9 @@ export const demos: Demo[] = [
     "name": "EchoLab",
     "nameHe": "סטודיו פודקאסט",
     "tagline": "Record, edit, publish",
-    "category": "education",
-    "categoryHe": "למידה וחינוך",
-    "layout": "calendar",
+    "category": "social",
+    "categoryHe": "חברתי ותוכן",
+    "layout": "studio",
     "builtWith": "Cursor",
     "palette": {
       "bg": "#0A1628",
@@ -1731,10 +1721,10 @@ export const demos: Demo[] = [
       "accent2": "#22D3EE"
     },
     "features": [
-      "Week view",
-      "Events",
-      "Availability",
-      "Reminders"
+      "Canvas",
+      "Layers",
+      "AI assist",
+      "Export"
     ]
   },
   {
@@ -1743,9 +1733,9 @@ export const demos: Demo[] = [
     "name": "SilverLine",
     "nameHe": "בנקאות לעסקים קטנים",
     "tagline": "Cashflow you can read",
-    "category": "productivity",
-    "categoryHe": "פרודוקטיביות",
-    "layout": "analytics",
+    "category": "finance",
+    "categoryHe": "פיננסים ובנקים",
+    "layout": "dashboard",
     "builtWith": "GPT-4",
     "palette": {
       "bg": "#FFF8F0",
@@ -1756,10 +1746,10 @@ export const demos: Demo[] = [
       "accent2": "#2F5D50"
     },
     "features": [
-      "Funnel",
-      "Cohorts",
-      "Export",
-      "Alerts"
+      "KPI cards",
+      "Charts",
+      "Activity feed",
+      "Filters"
     ]
   },
   {
@@ -1768,9 +1758,9 @@ export const demos: Demo[] = [
     "name": "FieldNote",
     "nameHe": "יומן שטח לחוקרים",
     "tagline": "Capture observations offline",
-    "category": "social",
-    "categoryHe": "חברתי ותוכן",
-    "layout": "feed",
+    "category": "education",
+    "categoryHe": "למידה וחינוך",
+    "layout": "form",
     "builtWith": "Gemini",
     "palette": {
       "bg": "#0D1117",
@@ -1781,10 +1771,10 @@ export const demos: Demo[] = [
       "accent2": "#58A6FF"
     },
     "features": [
-      "Posts",
-      "Comments",
-      "Reactions",
-      "Compose"
+      "Multi-step",
+      "Validation",
+      "Progress",
+      "Review"
     ]
   },
   {
@@ -1793,9 +1783,9 @@ export const demos: Demo[] = [
     "name": "WarmInbox",
     "nameHe": "תיבת דואר חכמה",
     "tagline": "Triage mail with AI labels",
-    "category": "travel",
-    "categoryHe": "נסיעות ואירוח",
-    "layout": "form",
+    "category": "ai",
+    "categoryHe": "כלי AI וצ׳אט",
+    "layout": "chat",
     "builtWith": "v0",
     "palette": {
       "bg": "#F5F0EB",
@@ -1806,10 +1796,10 @@ export const demos: Demo[] = [
       "accent2": "#B45309"
     },
     "features": [
-      "Multi-step",
-      "Validation",
-      "Progress",
-      "Review"
+      "Thread list",
+      "Composer",
+      "Suggestions",
+      "Sources"
     ]
   },
   {
@@ -1820,7 +1810,7 @@ export const demos: Demo[] = [
     "tagline": "Quotes, jobs, invoices",
     "category": "ops",
     "categoryHe": "תפעול ולוגיסטיקה",
-    "layout": "studio",
+    "layout": "kanban",
     "builtWith": "Bolt",
     "palette": {
       "bg": "#14121A",
@@ -1831,10 +1821,10 @@ export const demos: Demo[] = [
       "accent2": "#A78BFA"
     },
     "features": [
-      "Canvas",
-      "Layers",
-      "AI assist",
-      "Export"
+      "Columns",
+      "Cards",
+      "Drag affordance",
+      "WIP limits"
     ]
   },
   {
@@ -1843,9 +1833,9 @@ export const demos: Demo[] = [
     "name": "SkyPilot",
     "nameHe": "תכנון טיסות לחובבים",
     "tagline": "Weather, routes, checklists",
-    "category": "saas",
-    "categoryHe": "SaaS ודשבורדים",
-    "layout": "landing",
+    "category": "travel",
+    "categoryHe": "נסיעות ואירוח",
+    "layout": "form",
     "builtWith": "Lovable",
     "palette": {
       "bg": "#0B1220",
@@ -1856,10 +1846,10 @@ export const demos: Demo[] = [
       "accent2": "#FF6B4A"
     },
     "features": [
-      "Hero",
-      "Features",
-      "CTA",
-      "Social proof"
+      "Multi-step",
+      "Validation",
+      "Progress",
+      "Review"
     ]
   },
   {
@@ -1868,9 +1858,9 @@ export const demos: Demo[] = [
     "name": "DoseTrack",
     "nameHe": "תזכורות תרופות",
     "tagline": "Never miss a dose again",
-    "category": "ai",
-    "categoryHe": "כלי AI וצ׳אט",
-    "layout": "dashboard",
+    "category": "health",
+    "categoryHe": "בריאות וכושר",
+    "layout": "calendar",
     "builtWith": "Copilot",
     "palette": {
       "bg": "#FAF7F2",
@@ -1881,10 +1871,10 @@ export const demos: Demo[] = [
       "accent2": "#D97706"
     },
     "features": [
-      "KPI cards",
-      "Charts",
-      "Activity feed",
-      "Filters"
+      "Week view",
+      "Events",
+      "Availability",
+      "Reminders"
     ]
   },
   {
@@ -1895,7 +1885,7 @@ export const demos: Demo[] = [
     "tagline": "Stall schedules and sales",
     "category": "commerce",
     "categoryHe": "מסחר וחנויות",
-    "layout": "chat",
+    "layout": "calendar",
     "builtWith": "Claude",
     "palette": {
       "bg": "#111111",
@@ -1906,10 +1896,10 @@ export const demos: Demo[] = [
       "accent2": "#E85D04"
     },
     "features": [
-      "Thread list",
-      "Composer",
-      "Suggestions",
-      "Sources"
+      "Week view",
+      "Events",
+      "Availability",
+      "Reminders"
     ]
   },
   {
@@ -1918,9 +1908,9 @@ export const demos: Demo[] = [
     "name": "BluePrint",
     "nameHe": "שרטוטים שיתופיים",
     "tagline": "Comment on plans in context",
-    "category": "health",
-    "categoryHe": "בריאות וכושר",
-    "layout": "marketplace",
+    "category": "productivity",
+    "categoryHe": "פרודוקטיביות",
+    "layout": "studio",
     "builtWith": "Cursor",
     "palette": {
       "bg": "#F0F4F8",
@@ -1931,10 +1921,10 @@ export const demos: Demo[] = [
       "accent2": "#059669"
     },
     "features": [
-      "Product grid",
-      "Filters",
-      "Cart",
-      "Ratings"
+      "Canvas",
+      "Layers",
+      "AI assist",
+      "Export"
     ]
   },
   {
@@ -1943,9 +1933,9 @@ export const demos: Demo[] = [
     "name": "ToastMenu",
     "nameHe": "תפריט דיגיטלי למסעדה",
     "tagline": "QR menus that update live",
-    "category": "finance",
-    "categoryHe": "פיננסים ובנקים",
-    "layout": "kanban",
+    "category": "commerce",
+    "categoryHe": "מסחר וחנויות",
+    "layout": "landing",
     "builtWith": "GPT-4",
     "palette": {
       "bg": "#1A0F0A",
@@ -1956,10 +1946,10 @@ export const demos: Demo[] = [
       "accent2": "#C4A35A"
     },
     "features": [
-      "Columns",
-      "Cards",
-      "Drag affordance",
-      "WIP limits"
+      "Hero",
+      "Features",
+      "CTA",
+      "Social proof"
     ]
   },
   {
@@ -1968,9 +1958,9 @@ export const demos: Demo[] = [
     "name": "RelayChat",
     "nameHe": "צ׳אט צוותי מהיר",
     "tagline": "Threads that stay searchable",
-    "category": "education",
-    "categoryHe": "למידה וחינוך",
-    "layout": "calendar",
+    "category": "productivity",
+    "categoryHe": "פרודוקטיביות",
+    "layout": "chat",
     "builtWith": "Gemini",
     "palette": {
       "bg": "#0A1628",
@@ -1981,10 +1971,10 @@ export const demos: Demo[] = [
       "accent2": "#22D3EE"
     },
     "features": [
-      "Week view",
-      "Events",
-      "Availability",
-      "Reminders"
+      "Thread list",
+      "Composer",
+      "Suggestions",
+      "Sources"
     ]
   },
   {
@@ -1993,9 +1983,9 @@ export const demos: Demo[] = [
     "name": "SandBox",
     "nameHe": "סביבת ניסויים למוצר",
     "tagline": "Prototype with real data",
-    "category": "productivity",
-    "categoryHe": "פרודוקטיביות",
-    "layout": "analytics",
+    "category": "ai",
+    "categoryHe": "כלי AI וצ׳אט",
+    "layout": "studio",
     "builtWith": "v0",
     "palette": {
       "bg": "#FFF8F0",
@@ -2006,10 +1996,10 @@ export const demos: Demo[] = [
       "accent2": "#2F5D50"
     },
     "features": [
-      "Funnel",
-      "Cohorts",
-      "Export",
-      "Alerts"
+      "Canvas",
+      "Layers",
+      "AI assist",
+      "Export"
     ]
   },
   {
@@ -2018,9 +2008,9 @@ export const demos: Demo[] = [
     "name": "OliveOil",
     "nameHe": "חנות מותג שמן זית",
     "tagline": "Origin stories and orders",
-    "category": "social",
-    "categoryHe": "חברתי ותוכן",
-    "layout": "feed",
+    "category": "commerce",
+    "categoryHe": "מסחר וחנויות",
+    "layout": "marketplace",
     "builtWith": "Bolt",
     "palette": {
       "bg": "#0D1117",
@@ -2031,10 +2021,10 @@ export const demos: Demo[] = [
       "accent2": "#58A6FF"
     },
     "features": [
-      "Posts",
-      "Comments",
-      "Reactions",
-      "Compose"
+      "Product grid",
+      "Filters",
+      "Cart",
+      "Ratings"
     ]
   },
   {
@@ -2043,9 +2033,9 @@ export const demos: Demo[] = [
     "name": "NightOwl",
     "nameHe": "מעקב שינה עדין",
     "tagline": "Sleep insights without noise",
-    "category": "travel",
-    "categoryHe": "נסיעות ואירוח",
-    "layout": "form",
+    "category": "health",
+    "categoryHe": "בריאות וכושר",
+    "layout": "analytics",
     "builtWith": "Lovable",
     "palette": {
       "bg": "#F5F0EB",
@@ -2056,10 +2046,10 @@ export const demos: Demo[] = [
       "accent2": "#B45309"
     },
     "features": [
-      "Multi-step",
-      "Validation",
-      "Progress",
-      "Review"
+      "Funnel",
+      "Cohorts",
+      "Export",
+      "Alerts"
     ]
   },
   {
@@ -2068,9 +2058,9 @@ export const demos: Demo[] = [
     "name": "ClaimForm",
     "nameHe": "טפסי תביעה דיגיטליים",
     "tagline": "Guided forms that finish",
-    "category": "ops",
-    "categoryHe": "תפעול ולוגיסטיקה",
-    "layout": "studio",
+    "category": "finance",
+    "categoryHe": "פיננסים ובנקים",
+    "layout": "form",
     "builtWith": "Copilot",
     "palette": {
       "bg": "#14121A",
@@ -2081,10 +2071,10 @@ export const demos: Demo[] = [
       "accent2": "#A78BFA"
     },
     "features": [
-      "Canvas",
-      "Layers",
-      "AI assist",
-      "Export"
+      "Multi-step",
+      "Validation",
+      "Progress",
+      "Review"
     ]
   },
   {
@@ -2093,9 +2083,9 @@ export const demos: Demo[] = [
     "name": "UrbanFarm",
     "nameHe": "ניהול גינה קהילתית",
     "tagline": "Plots, harvests, volunteers",
-    "category": "saas",
-    "categoryHe": "SaaS ודשבורדים",
-    "layout": "landing",
+    "category": "social",
+    "categoryHe": "חברתי ותוכן",
+    "layout": "kanban",
     "builtWith": "Claude",
     "palette": {
       "bg": "#0B1220",
@@ -2106,10 +2096,10 @@ export const demos: Demo[] = [
       "accent2": "#FF6B4A"
     },
     "features": [
-      "Hero",
-      "Features",
-      "CTA",
-      "Social proof"
+      "Columns",
+      "Cards",
+      "Drag affordance",
+      "WIP limits"
     ]
   },
   {
@@ -2118,8 +2108,8 @@ export const demos: Demo[] = [
     "name": "LedgerLite",
     "nameHe": "חשבוניות לבעלי מקצוע",
     "tagline": "Invoice, remind, get paid",
-    "category": "ai",
-    "categoryHe": "כלי AI וצ׳אט",
+    "category": "finance",
+    "categoryHe": "פיננסים ובנקים",
     "layout": "dashboard",
     "builtWith": "Cursor",
     "palette": {
@@ -2143,9 +2133,9 @@ export const demos: Demo[] = [
     "name": "StoryArc",
     "nameHe": "כתיבת תסריטים עם AI",
     "tagline": "Structure scenes that land",
-    "category": "commerce",
-    "categoryHe": "מסחר וחנויות",
-    "layout": "chat",
+    "category": "ai",
+    "categoryHe": "כלי AI וצ׳אט",
+    "layout": "studio",
     "builtWith": "GPT-4",
     "palette": {
       "bg": "#111111",
@@ -2156,10 +2146,10 @@ export const demos: Demo[] = [
       "accent2": "#E85D04"
     },
     "features": [
-      "Thread list",
-      "Composer",
-      "Suggestions",
-      "Sources"
+      "Canvas",
+      "Layers",
+      "AI assist",
+      "Export"
     ]
   },
   {
@@ -2168,8 +2158,8 @@ export const demos: Demo[] = [
     "name": "PeakCamp",
     "nameHe": "הזמנות לקמפינג",
     "tagline": "Sites, gear, weather",
-    "category": "health",
-    "categoryHe": "בריאות וכושר",
+    "category": "travel",
+    "categoryHe": "נסיעות ואירוח",
     "layout": "marketplace",
     "builtWith": "Gemini",
     "palette": {
@@ -2193,9 +2183,9 @@ export const demos: Demo[] = [
     "name": "Wireframe",
     "nameHe": "כלי wireframe מהיר",
     "tagline": "Boxes to flows in minutes",
-    "category": "finance",
-    "categoryHe": "פיננסים ובנקים",
-    "layout": "kanban",
+    "category": "ai",
+    "categoryHe": "כלי AI וצ׳אט",
+    "layout": "studio",
     "builtWith": "v0",
     "palette": {
       "bg": "#1A0F0A",
@@ -2206,10 +2196,10 @@ export const demos: Demo[] = [
       "accent2": "#C4A35A"
     },
     "features": [
-      "Columns",
-      "Cards",
-      "Drag affordance",
-      "WIP limits"
+      "Canvas",
+      "Layers",
+      "AI assist",
+      "Export"
     ]
   },
   {
@@ -2218,9 +2208,9 @@ export const demos: Demo[] = [
     "name": "GiftList",
     "nameHe": "רשימות מתנות משותפות",
     "tagline": "Wishlists friends actually use",
-    "category": "education",
-    "categoryHe": "למידה וחינוך",
-    "layout": "calendar",
+    "category": "social",
+    "categoryHe": "חברתי ותוכן",
+    "layout": "feed",
     "builtWith": "Bolt",
     "palette": {
       "bg": "#0A1628",
@@ -2231,10 +2221,10 @@ export const demos: Demo[] = [
       "accent2": "#22D3EE"
     },
     "features": [
-      "Week view",
-      "Events",
-      "Availability",
-      "Reminders"
+      "Posts",
+      "Comments",
+      "Reactions",
+      "Compose"
     ]
   },
   {
@@ -2243,9 +2233,9 @@ export const demos: Demo[] = [
     "name": "ClinicLab",
     "nameHe": "תוצאות מעבדה למטופלים",
     "tagline": "Results with plain language",
-    "category": "productivity",
-    "categoryHe": "פרודוקטיביות",
-    "layout": "analytics",
+    "category": "health",
+    "categoryHe": "בריאות וכושר",
+    "layout": "dashboard",
     "builtWith": "Lovable",
     "palette": {
       "bg": "#FFF8F0",
@@ -2256,10 +2246,10 @@ export const demos: Demo[] = [
       "accent2": "#2F5D50"
     },
     "features": [
-      "Funnel",
-      "Cohorts",
-      "Export",
-      "Alerts"
+      "KPI cards",
+      "Charts",
+      "Activity feed",
+      "Filters"
     ]
   },
   {
@@ -2268,9 +2258,9 @@ export const demos: Demo[] = [
     "name": "RouteWise",
     "nameHe": "אופטימיזציית מסלולי שליחים",
     "tagline": "Fewer miles, same stops",
-    "category": "social",
-    "categoryHe": "חברתי ותוכן",
-    "layout": "feed",
+    "category": "ops",
+    "categoryHe": "תפעול ולוגיסטיקה",
+    "layout": "analytics",
     "builtWith": "Copilot",
     "palette": {
       "bg": "#0D1117",
@@ -2281,10 +2271,10 @@ export const demos: Demo[] = [
       "accent2": "#58A6FF"
     },
     "features": [
-      "Posts",
-      "Comments",
-      "Reactions",
-      "Compose"
+      "Funnel",
+      "Cohorts",
+      "Export",
+      "Alerts"
     ]
   },
   {
@@ -2293,9 +2283,9 @@ export const demos: Demo[] = [
     "name": "BrandKit",
     "nameHe": "מערכת מותג דיגיטלית",
     "tagline": "Colors, type, assets synced",
-    "category": "travel",
-    "categoryHe": "נסיעות ואירוח",
-    "layout": "form",
+    "category": "productivity",
+    "categoryHe": "פרודוקטיביות",
+    "layout": "studio",
     "builtWith": "Claude",
     "palette": {
       "bg": "#F5F0EB",
@@ -2306,10 +2296,10 @@ export const demos: Demo[] = [
       "accent2": "#B45309"
     },
     "features": [
-      "Multi-step",
-      "Validation",
-      "Progress",
-      "Review"
+      "Canvas",
+      "Layers",
+      "AI assist",
+      "Export"
     ]
   },
   {
@@ -2318,9 +2308,9 @@ export const demos: Demo[] = [
     "name": "PetNest",
     "nameHe": "ניהול מרפאת חיות",
     "tagline": "Visits, vaccines, owners",
-    "category": "ops",
-    "categoryHe": "תפעול ולוגיסטיקה",
-    "layout": "studio",
+    "category": "health",
+    "categoryHe": "בריאות וכושר",
+    "layout": "calendar",
     "builtWith": "Cursor",
     "palette": {
       "bg": "#14121A",
@@ -2331,10 +2321,10 @@ export const demos: Demo[] = [
       "accent2": "#A78BFA"
     },
     "features": [
-      "Canvas",
-      "Layers",
-      "AI assist",
-      "Export"
+      "Week view",
+      "Events",
+      "Availability",
+      "Reminders"
     ]
   },
   {
@@ -2343,9 +2333,9 @@ export const demos: Demo[] = [
     "name": "LiveScore",
     "nameHe": "לוח תוצאות ספורט מקומי",
     "tagline": "Games, brackets, updates",
-    "category": "saas",
-    "categoryHe": "SaaS ודשבורדים",
-    "layout": "landing",
+    "category": "social",
+    "categoryHe": "חברתי ותוכן",
+    "layout": "feed",
     "builtWith": "GPT-4",
     "palette": {
       "bg": "#0B1220",
@@ -2356,10 +2346,10 @@ export const demos: Demo[] = [
       "accent2": "#FF6B4A"
     },
     "features": [
-      "Hero",
-      "Features",
-      "CTA",
-      "Social proof"
+      "Posts",
+      "Comments",
+      "Reactions",
+      "Compose"
     ]
   },
   {
@@ -2368,8 +2358,8 @@ export const demos: Demo[] = [
     "name": "ShelfLife",
     "nameHe": "מעקב תאריכי תפוגה",
     "tagline": "Waste less inventory",
-    "category": "ai",
-    "categoryHe": "כלי AI וצ׳אט",
+    "category": "ops",
+    "categoryHe": "תפעול ולוגיסטיקה",
     "layout": "dashboard",
     "builtWith": "Gemini",
     "palette": {
@@ -2393,9 +2383,9 @@ export const demos: Demo[] = [
     "name": "MentorMatch",
     "nameHe": "חיבור מנטורים למתלמדים",
     "tagline": "Matches that stick",
-    "category": "commerce",
-    "categoryHe": "מסחר וחנויות",
-    "layout": "chat",
+    "category": "education",
+    "categoryHe": "למידה וחינוך",
+    "layout": "landing",
     "builtWith": "v0",
     "palette": {
       "bg": "#111111",
@@ -2406,10 +2396,10 @@ export const demos: Demo[] = [
       "accent2": "#E85D04"
     },
     "features": [
-      "Thread list",
-      "Composer",
-      "Suggestions",
-      "Sources"
+      "Hero",
+      "Features",
+      "CTA",
+      "Social proof"
     ]
   },
   {
@@ -2418,9 +2408,9 @@ export const demos: Demo[] = [
     "name": "CloudPantry",
     "nameHe": "מלאי מטבח ביתי",
     "tagline": "Know what you have",
-    "category": "health",
-    "categoryHe": "בריאות וכושר",
-    "layout": "marketplace",
+    "category": "productivity",
+    "categoryHe": "פרודוקטיביות",
+    "layout": "form",
     "builtWith": "Bolt",
     "palette": {
       "bg": "#F0F4F8",
@@ -2431,10 +2421,10 @@ export const demos: Demo[] = [
       "accent2": "#059669"
     },
     "features": [
-      "Product grid",
-      "Filters",
-      "Cart",
-      "Ratings"
+      "Multi-step",
+      "Validation",
+      "Progress",
+      "Review"
     ]
   },
   {
@@ -2443,8 +2433,8 @@ export const demos: Demo[] = [
     "name": "StageLight",
     "nameHe": "ניהול מופעים קטנים",
     "tagline": "Cue sheets and crew",
-    "category": "finance",
-    "categoryHe": "פיננסים ובנקים",
+    "category": "social",
+    "categoryHe": "חברתי ותוכן",
     "layout": "kanban",
     "builtWith": "Lovable",
     "palette": {
@@ -2468,9 +2458,9 @@ export const demos: Demo[] = [
     "name": "TaxEase",
     "nameHe": "הכנה למס לעצמאים",
     "tagline": "Receipts sorted by season",
-    "category": "education",
-    "categoryHe": "למידה וחינוך",
-    "layout": "calendar",
+    "category": "finance",
+    "categoryHe": "פיננסים ובנקים",
+    "layout": "form",
     "builtWith": "Copilot",
     "palette": {
       "bg": "#0A1628",
@@ -2481,10 +2471,10 @@ export const demos: Demo[] = [
       "accent2": "#22D3EE"
     },
     "features": [
-      "Week view",
-      "Events",
-      "Availability",
-      "Reminders"
+      "Multi-step",
+      "Validation",
+      "Progress",
+      "Review"
     ]
   },
   {
@@ -2493,9 +2483,9 @@ export const demos: Demo[] = [
     "name": "Neighborly",
     "nameHe": "החלפת שירותים בשכונה",
     "tagline": "Trade skills nearby",
-    "category": "productivity",
-    "categoryHe": "פרודוקטיביות",
-    "layout": "analytics",
+    "category": "social",
+    "categoryHe": "חברתי ותוכן",
+    "layout": "marketplace",
     "builtWith": "Claude",
     "palette": {
       "bg": "#FFF8F0",
@@ -2506,10 +2496,10 @@ export const demos: Demo[] = [
       "accent2": "#2F5D50"
     },
     "features": [
-      "Funnel",
-      "Cohorts",
-      "Export",
-      "Alerts"
+      "Product grid",
+      "Filters",
+      "Cart",
+      "Ratings"
     ]
   },
   {
@@ -2518,9 +2508,9 @@ export const demos: Demo[] = [
     "name": "FilmReel",
     "nameHe": "ארכיון צילומים לצוותים",
     "tagline": "Find the shot, not the folder",
-    "category": "social",
-    "categoryHe": "חברתי ותוכן",
-    "layout": "feed",
+    "category": "productivity",
+    "categoryHe": "פרודוקטיביות",
+    "layout": "marketplace",
     "builtWith": "Cursor",
     "palette": {
       "bg": "#0D1117",
@@ -2531,10 +2521,10 @@ export const demos: Demo[] = [
       "accent2": "#58A6FF"
     },
     "features": [
-      "Posts",
-      "Comments",
-      "Reactions",
-      "Compose"
+      "Product grid",
+      "Filters",
+      "Cart",
+      "Ratings"
     ]
   },
   {
@@ -2545,7 +2535,7 @@ export const demos: Demo[] = [
     "tagline": "Capacity, passes, lines",
     "category": "travel",
     "categoryHe": "נסיעות ואירוח",
-    "layout": "form",
+    "layout": "landing",
     "builtWith": "GPT-4",
     "palette": {
       "bg": "#F5F0EB",
@@ -2556,10 +2546,10 @@ export const demos: Demo[] = [
       "accent2": "#B45309"
     },
     "features": [
-      "Multi-step",
-      "Validation",
-      "Progress",
-      "Review"
+      "Hero",
+      "Features",
+      "CTA",
+      "Social proof"
     ]
   },
   {
@@ -2570,7 +2560,7 @@ export const demos: Demo[] = [
     "tagline": "Photos and notes per day",
     "category": "ops",
     "categoryHe": "תפעול ולוגיסטיקה",
-    "layout": "studio",
+    "layout": "feed",
     "builtWith": "Gemini",
     "palette": {
       "bg": "#14121A",
@@ -2581,10 +2571,10 @@ export const demos: Demo[] = [
       "accent2": "#A78BFA"
     },
     "features": [
-      "Canvas",
-      "Layers",
-      "AI assist",
-      "Export"
+      "Posts",
+      "Comments",
+      "Reactions",
+      "Compose"
     ]
   }
 ];
